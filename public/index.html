@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MatomoCamp Livestream</title>
     <link href="./libs/bootstrap.min.css" rel="stylesheet">
     <link href="./libs/video-js.min.css" rel="stylesheet"/>
     <link href="./libs/videojs-hls-quality-selector.css" rel="stylesheet">
@@ -15,14 +16,16 @@
 			max-width: 50%;
 			float: left;
 		}
+
 		.side-by-side #chat-wrapper {
-            width: 50%;
-            height: 100vh;
-        }
+			width: 50%;
+			height: 100vh;
+		}
+
 		.side-by-side #chat-wrapper iframe {
-            width: 100%;
-            height: 100%;
-        }
+			width: 100%;
+			height: 100%;
+		}
 
 		.no-chat iframe, .no-chat .ratio {
 			display: none;
@@ -121,7 +124,7 @@
         }
         if (displayMode === "side-by-side") {
             chatWrapper.classList.remove("ratio")
-        } else  {
+        } else {
             chatWrapper.classList.add("ratio")
 
         }
