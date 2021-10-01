@@ -35,11 +35,6 @@
     qualityLevels.on('addqualitylevel', function (event) {
         let qualityLevel = event.qualityLevel;
             console.info(qualityLevel)
-        // if (!qualityLevel.height) {
-        //     console.info(qualityLevel)
-        //     // FIXME: temporarily use bitrate for label text
-        //     qualityLevel.height = qualityLevel.bitrate;
-        // }
     });
     player.hlsQualitySelector();
     document.getElementById("livestream2").addEventListener("click", function () {
