@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./libs/video-js.min.css" rel="stylesheet"/>
+    <link href="./libs/videojs-hls-quality-selector.css" rel="stylesheet">
+
+</head>
+<body>
+<video-js id=vid1 width=600 height=300 controls
+          poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
+    <source
+   src="https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
+            type="application/x-mpegURL">
+</video-js>
+
+<button id="livestream1">Livestream 1</button>
+<button id="livestream2">Livestream 2</button>
+<script src="./libs/video.min.js"></script>
+<script src="./libs/videojs-contrib-quality-levels.min.js"></script>
+<script src="./libs/videojs-hls-quality-selector.min.js"></script>
+<script>
+    window.HELP_IMPROVE_VIDEOJS = false
+    let liveui = !videojs.browser.IS_ANDROID
+    const vid = document.getElementById('vid1');
+    const player = videojs(vid, {
+        liveui: liveui,
+        liveTracker: {
+            trackingThreshold: 0,
+        }
+    });
+    player.play();
+    let qualityLevels = player.qualityLevels();
+    qualityLevels.on('addqualitylevel', function (event) {
+        let qualityLevel = event.qualityLevel;
+            console.info(qualityLevel)
+        // if (!qualityLevel.height) {
+        //     console.info(qualityLevel)
+        //     // FIXME: temporarily use bitrate for label text
+        //     qualityLevel.height = qualityLevel.bitrate;
+        // }
+    });
+    player.hlsQualitySelector();
+    document.getElementById("livestream2").addEventListener("click", function () {
+	player.src("https://stream-mtmc-2021.cloud-ed.fr/hls/stream2.m3u8")
+    })
+    document.getElementById("livestream1").addEventListener("click", function () {
+	player.src("https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8")
+    })
+</script>
+</body>
+</html>
