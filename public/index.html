@@ -8,8 +8,13 @@
     <link href="./libs/video-js.min.css" rel="stylesheet"/>
     <link href="./libs/videojs-hls-quality-selector.css" rel="stylesheet">
     <style>
-		.ratio, #video-wrapper {
+		.ratio {
 			max-height: 100vh;
+		}
+
+		#video-wrapper, #chat-wrapper {
+			max-width:  1800px;
+            margin: auto;
 		}
 
 		.side-by-side #video-wrapper, .side-by-side #chat-wrapper {
@@ -17,7 +22,7 @@
 			float: left;
 		}
 
-		.side-by-side #chat-wrapper,.side-by-side #video-wrapper {
+		.side-by-side #chat-wrapper, .side-by-side #video-wrapper {
 			width: 50%;
 			height: 100vh;
 		}
