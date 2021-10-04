@@ -8,16 +8,16 @@
     <link href="./libs/video-js.min.css" rel="stylesheet"/>
     <link href="./libs/videojs-hls-quality-selector.css" rel="stylesheet">
     <style>
-		.ratio, .video-js.vjs-fluid {
+		.ratio, #video-wrapper {
 			max-height: 100vh;
 		}
 
-		.side-by-side .video-js.vjs-fluid, .side-by-side #chat-wrapper {
+		.side-by-side #video-wrapper, .side-by-side #chat-wrapper {
 			max-width: 50%;
 			float: left;
 		}
 
-		.side-by-side #chat-wrapper {
+		.side-by-side #chat-wrapper,.side-by-side #video-wrapper {
 			width: 50%;
 			height: 100vh;
 		}
@@ -65,12 +65,14 @@
         </svg>
     </a>
 </nav>
-<video-js id=vid1 width=600 height=300 controls
-          poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
-    <source
-            src="https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
-            type="application/x-mpegURL">
-</video-js>
+<div id="video-wrapper">
+    <video-js id="vid1" controls class="vjs-16-9"
+              poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
+        <source
+                src="https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
+                type="application/x-mpegURL">
+    </video-js>
+</div>
 <div class="ratio ratio-16x9" id="chat-wrapper">
     <iframe src="https://chat.matomocamp.org/#/room/#testroom:matomocamp.org"></iframe>
 </div>
@@ -96,7 +98,7 @@
         liveTracker: {
             trackingThreshold: 0,
         },
-        fluid: true
+        aspectRatio: '16:9'
     });
     player.play();
     let qualityLevels = player.qualityLevels();
