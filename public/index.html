@@ -79,7 +79,7 @@
     </video-js>
 </div>
 <div class="ratio ratio-16x9" id="chat-wrapper">
-    <iframe src="https://chat.matomocamp.org/#/room/#testroom:matomocamp.org"></iframe>
+    <iframe id="iframe" src="https://chat.matomocamp.org/#/room/#testroom:matomocamp.org"></iframe>
 </div>
 <!--<button id="livestream1">Livestream 1</button>-->
 <!--<button id="livestream2">Livestream 2</button>-->
@@ -90,8 +90,9 @@
 <script>
     window.scrollTo = function () {
     };
-    HTMLElement.prototype.focus = function () {
-    }
+    document.getElementById("iframe").addEventListener("load",function () {
+        document.body.focus()
+    })
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
