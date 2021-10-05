@@ -11,6 +11,9 @@
 		.ratio {
 			max-height: 100vh;
 		}
+        audio {
+            width: 100%;
+        }
 
 		#video-wrapper, #chat-wrapper {
 			max-width: 1800px;
@@ -91,10 +94,12 @@
               poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
     </video-js>
 </div>
-<audio>
+<h2>Audio only</h2>
+<audio controls>
     <source src="/files/tag-manager/audio-only.opus" type="audio/ogg; codecs=opus">
     <source src="/files/tag-manager/audio-only.mp3" type="audio/mpeg">
 </audio>
+<h2>Chat</h2>
 <div class="ratio ratio-16x9" id="chat-wrapper">
     <iframe id="iframe" src="https://chat.matomocamp.org/#/room/#tag-manager-atoz:matomocamp.org"></iframe>
 </div>
