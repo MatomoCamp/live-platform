@@ -3,52 +3,52 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MatomoCamp Livestream</title>
-    <link href="./libs/bootstrap.min.css" rel="stylesheet">
-    <link href="./libs/video-js.min.css" rel="stylesheet"/>
-    <link href="./libs/videojs-hls-quality-selector.css" rel="stylesheet">
+    <title>MatomoCamp Livestream -- {{ talk.title }}</title>
+    <link href="/static/libs/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/libs/video-js.min.css" rel="stylesheet"/>
+    <link href="/static/libs/videojs-hls-quality-selector.css" rel="stylesheet">
     <style>
-		.ratio {
-			max-height: 100vh;
-		}
+        .ratio {
+            max-height: 100vh;
+        }
 
-		#video-wrapper, #chat-wrapper {
-			max-width:  1800px;
+        #video-wrapper, #chat-wrapper {
+            max-width: 1800px;
             margin: auto;
-		}
+        }
 
-		.side-by-side #video-wrapper, .side-by-side #chat-wrapper {
-			max-width: 50%;
-			float: left;
-		}
+        .side-by-side #video-wrapper, .side-by-side #chat-wrapper {
+            max-width: 50%;
+            float: left;
+        }
 
-		.side-by-side #chat-wrapper, .side-by-side #video-wrapper {
-			width: 50%;
-			height: 100vh;
-		}
+        .side-by-side #chat-wrapper, .side-by-side #video-wrapper {
+            width: 50%;
+            height: 100vh;
+        }
 
-		.side-by-side #chat-wrapper iframe {
-			width: 100%;
-			height: 100%;
-		}
+        .side-by-side #chat-wrapper iframe {
+            width: 100%;
+            height: 100%;
+        }
 
-		.no-chat iframe, .no-chat .ratio {
-			display: none;
-		}
+        .no-chat iframe, .no-chat .ratio {
+            display: none;
+        }
 
-		.navbar {
-			background-color: #3450a3 !important;
-		}
+        .navbar {
+            background-color: #3450a3 !important;
+        }
 
-		.navbar .btn {
-			color: white;
-		}
+        .navbar .btn {
+            color: white;
+        }
 
-		.navbar svg {
-			height: 20px;
-			width: auto;
-			fill: white;
-		}
+        .navbar svg {
+            height: 20px;
+            width: auto;
+            fill: white;
+        }
     </style>
     <!-- Matomo -->
     <script>
@@ -57,12 +57,14 @@
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         _paq.push(['enableHeartBeatTimer']);
-        (function() {
-            var u="//mtm.matomocamp.org/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
+        (function () {
+            var u = "//mtm.matomocamp.org/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
             _paq.push(['setSiteId', '5']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
         })();
     </script>
     <!-- End Matomo Code -->
@@ -94,19 +96,46 @@
                 type="application/x-mpegURL">
     </video-js>
 </div>
+<div id="description">
+    <h1>{{ talk.title }}</h1>
+    <p>by {{ talk.speaker_names|join(",") }}</p>
+    <dl>
+        <dt>Language</dt>
+        <dd>{{ talk.full_language }}</dd>
+    </dl>
+    <p>{{ talk.abstract }}</p>
+
+    <h3>At the same time</h3>
+    {% for other_talk in others %}
+        <a href="{{ url_for("talk_page",session_id=other_talk.id) }}">{{ other_talk.title }}</a>
+    {% endfor %}
+    <h3>Coming up next</h3>
+    <ul>
+        {% for other_talk in next %}
+            <li>
+                <a href="{{ url_for("talk_page",session_id=other_talk.id) }}">
+                    {{ other_talk.title }}
+                </a>
+                (<a href="{{ other_talk.schedule_url }}">Schedule</a>)
+            </li>
+        {% else %}
+            <li>No more talks for today</li>
+        {% endfor %}
+    </ul>
+</div>
 <div class="ratio ratio-16x9" id="chat-wrapper">
     <iframe id="iframe" src="https://chat.matomocamp.org/#/room/#tag-manager-atoz:matomocamp.org"></iframe>
 </div>
 <!--<button id="livestream1">Livestream 1</button>-->
 <!--<button id="livestream2">Livestream 2</button>-->
-<script src="./libs/video.min.js"></script>
-<script src="./libs/videojs-contrib-quality-levels.min.js"></script>
-<script src="./libs/videojs-hls-quality-selector.min.js"></script>
-<script src="./libs/bootstrap.bundle.min.js"></script>
+<script src="/static/libs/video.min.js"></script>
+<script src="/static/libs/videojs-contrib-quality-levels.min.js"></script>
+<script src="/static/libs/videojs-hls-quality-selector.min.js"></script>
+<script src="/static/libs/bootstrap.bundle.min.js"></script>
 <script>
     window.scrollTo = function () {
     };
-    document.getElementById("iframe").addEventListener("load",function () {
+    document.getElementById("iframe").addEventListener("load", function () {
         document.body.focus()
     })
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
