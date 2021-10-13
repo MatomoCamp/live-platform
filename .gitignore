@@ -5,3 +5,5 @@ __pycache__/
 matomocamp-2021_sessions.json
 static/main.css
 static/main.css.map
+venv/
+runtime/
