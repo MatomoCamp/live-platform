@@ -8,6 +8,6 @@ runpython="sudo -u live $python"
 
 git pull
 
-$runpython utils.py
+$python utils.py
 
 sudo systemctl reload live.service
