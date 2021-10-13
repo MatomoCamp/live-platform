@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MatomoCamp Livestream -- {{ talk.title }}</title>
-    {% if debug %}
+    {% if debug and False %}
         <link href="/css" rel="stylesheet">
     {% else %}
         <link href="/static/main.css" rel="stylesheet">
@@ -61,6 +61,8 @@
         <dd>{{ talk.full_language }}</dd>
         <dt>Starts</dt>
         <dd>{{ delta }}</dd>
+        <dt>Chat Room</dt>
+        <dd><a target="_blank" href="{{ talk.chat_room_url }}"><code>{{ talk.chat_room_id }}</code></a></dd>
     </dl>
     <p>{{ talk.abstract }}</p>
 
@@ -101,7 +103,7 @@
     </video-js>
 </div>
 <div class="ratio ratio-16x9" id="chat-wrapper">
-    <iframe id="iframe" src="https://chat.matomocamp.org/#/room/#tag-manager-atoz:matomocamp.org"></iframe>
+    <iframe id="iframe" src="{{ talk.chat_room_url }}"></iframe>
 </div>
 <!--<button id="livestream1">Livestream 1</button>-->
 <!--<button id="livestream2">Livestream 2</button>-->

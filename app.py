@@ -3,10 +3,18 @@ from datetime import datetime, timezone
 from babel.dates import format_timedelta
 from flask import Flask, render_template, abort, make_response
 
-from data import talks_by_id, talks_at_the_same_time, coming_up_next
+from data import talks_by_id, talks_at_the_same_time, coming_up_next, talks
 from utils import get_css
 
 app = Flask(__name__)
+
+
+@app.route("/chat-home")
+def chat_home():
+    return render_template(
+        "chat-home.html",
+        talks=talks
+    )
 
 
 @app.route("/<string:session_id>")
