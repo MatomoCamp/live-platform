@@ -9,6 +9,15 @@ from utils import get_css
 app = Flask(__name__)
 
 
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        talks=talks,
+        debug=app.debug
+    )
+
+
 @app.route("/chat-home")
 def chat_home():
     return render_template(
