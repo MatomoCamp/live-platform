@@ -5,6 +5,17 @@ from typing import List, Dict
 
 from dateutil.parser import parse
 
+track_colors = {
+    "Privacy": "#F38334",
+    "System Administration": "#95C748",
+    "Contributing": "#8E0F0F",
+    "Digital Analytics": "#3152A0",
+    "Using Matomo": "#35BFC0",
+    "Business": "#673AB7",
+    "Use Cases": "#1B5E20",
+    "MatomoCamp": "#404040"
+}
+
 
 @dataclass
 class Talk:
@@ -33,6 +44,20 @@ class Talk:
     @property
     def schedule_url(self) -> str:
         return f"https://schedule.matomocamp.org/matomocamp-2021/talk/{self.id}/"
+
+    @property
+    def chat_room_url(self) -> str:
+        return "https://example.com"
+
+    @property
+    def livestream_url(self) -> str:
+        if self.room == "Livestream Room 1":
+            return "https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
+        return ""
+
+    @property
+    def track_color(self) -> str:
+        return track_colors[self.track]
 
 
 talks = []

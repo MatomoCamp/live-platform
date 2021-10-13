@@ -8,6 +8,8 @@ authors = ["Lukas Winkler <git@lw1.at>"]
 python = "^3.9"
 Flask = "^2.0.2"
 python-dateutil = "^2.8.2"
+Babel = "^2.9.1"
+libsass = "^0.21.0"
 
 [tool.poetry.dev-dependencies]
 

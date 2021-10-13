@@ -4,52 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MatomoCamp Livestream -- {{ talk.title }}</title>
-    <link href="/static/libs/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/libs/video-js.min.css" rel="stylesheet"/>
-    <link href="/static/libs/videojs-hls-quality-selector.css" rel="stylesheet">
-    <style>
-        .ratio {
-            max-height: 100vh;
-        }
-
-        #video-wrapper, #chat-wrapper {
-            max-width: 1800px;
-            margin: auto;
-        }
-
-        .side-by-side #video-wrapper, .side-by-side #chat-wrapper {
-            max-width: 50%;
-            float: left;
-        }
-
-        .side-by-side #chat-wrapper, .side-by-side #video-wrapper {
-            width: 50%;
-            height: 100vh;
-        }
-
-        .side-by-side #chat-wrapper iframe {
-            width: 100%;
-            height: 100%;
-        }
-
-        .no-chat iframe, .no-chat .ratio {
-            display: none;
-        }
-
-        .navbar {
-            background-color: #3450a3 !important;
-        }
-
-        .navbar .btn {
-            color: white;
-        }
-
-        .navbar svg {
-            height: 20px;
-            width: auto;
-            fill: white;
-        }
-    </style>
+    {% if debug %}
+        <link href="/css" rel="stylesheet">
+    {% else %}
+        <link href="/static/main.css" rel="stylesheet">
+    {% endif %}
     <!-- Matomo -->
     <script>
         var _paq = window._paq = window._paq || [];
@@ -88,40 +47,58 @@
         </svg>
     </a>
 </nav>
+<div id="description" class="container">
+    <h1>
+        {{ talk.title }}
+        <span class="badge rounded-pill bg-primary">{{ talk.room }}</span>
+    </h1>
+    <p>
+        by {{ talk.speaker_names|join(",") }}
+        <span class="badge rounded-pill" style="background: {{ talk.track_color }}">{{ talk.track }}</span>
+    </p>
+    <dl>
+        <dt>Language</dt>
+        <dd>{{ talk.full_language }}</dd>
+        <dt>Starts</dt>
+        <dd>{{ delta }}</dd>
+    </dl>
+    <p>{{ talk.abstract }}</p>
+
+    {% macro talk_item(t) -%}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+               aria-expanded="false">{{ t.title }}</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url_for("talk_page",session_id=t.id) }}">{{ t.room }}</a></li>
+                <li><a class="dropdown-item" href="{{ t.schedule_url }}">Details</a></li>
+                <li><a class="dropdown-item" href="{{ t.chat_room_url }}">Chat-Room</a></li>
+            </ul>
+        </li>
+    {%- endmacro %}
+
+
+    <h3>At the same time</h3>
+    <ul class="nav flex-column">
+        {% for other_talk in others %}
+            {{ talk_item(other_talk) }}
+        {% endfor %}
+    </ul>
+    {% if next %}
+        <h3>Coming up next</h3>
+        <ul class="nav flex-column">
+        {% for other_talk in next %}
+            {{ talk_item(other_talk) }}
+        {% endfor %}
+    {% endif %}
+    </ul>
+</div>
 <div id="video-wrapper">
     <video-js id="vid1" controls class="vjs-16-9"
               poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
         <source
-                src="https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
+                src="{{ talk.livestream_url }}"
                 type="application/x-mpegURL">
     </video-js>
-</div>
-<div id="description">
-    <h1>{{ talk.title }}</h1>
-    <p>by {{ talk.speaker_names|join(",") }}</p>
-    <dl>
-        <dt>Language</dt>
-        <dd>{{ talk.full_language }}</dd>
-    </dl>
-    <p>{{ talk.abstract }}</p>
-
-    <h3>At the same time</h3>
-    {% for other_talk in others %}
-        <a href="{{ url_for("talk_page",session_id=other_talk.id) }}">{{ other_talk.title }}</a>
-    {% endfor %}
-    <h3>Coming up next</h3>
-    <ul>
-        {% for other_talk in next %}
-            <li>
-                <a href="{{ url_for("talk_page",session_id=other_talk.id) }}">
-                    {{ other_talk.title }}
-                </a>
-                (<a href="{{ other_talk.schedule_url }}">Schedule</a>)
-            </li>
-        {% else %}
-            <li>No more talks for today</li>
-        {% endfor %}
-    </ul>
 </div>
 <div class="ratio ratio-16x9" id="chat-wrapper">
     <iframe id="iframe" src="https://chat.matomocamp.org/#/room/#tag-manager-atoz:matomocamp.org"></iframe>

@@ -1,0 +1,46 @@
+
+.ratio {
+  max-height: 100vh;
+}
+
+#video-wrapper, #chat-wrapper {
+  max-width: 1800px;
+  margin: auto;
+}
+
+.side-by-side #video-wrapper, .side-by-side #chat-wrapper {
+  max-width: 50%;
+  float: left;
+}
+
+.side-by-side #chat-wrapper, .side-by-side #video-wrapper {
+  width: 50%;
+  height: 100vh;
+}
+
+.side-by-side #chat-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.no-chat {
+  iframe, .ratio {
+    display: none;
+  }
+}
+
+.navbar {
+  background-color: $primary !important;
+
+  .btn {
+    color: white;
+  }
+
+  svg {
+    height: 20px;
+    width: auto;
+    fill: white;
+  }
+
+}
+
