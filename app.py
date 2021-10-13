@@ -20,10 +20,12 @@ def home():
 
 @app.route("/chat-home")
 def chat_home():
-    return render_template(
+    response = make_response(render_template(
         "chat-home.html",
         talks=talks
-    )
+    ))
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 
 @app.route("/<string:session_id>")
