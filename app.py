@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 
 from babel.dates import format_timedelta
-from flask import Flask, render_template, abort, make_response
+from flask import Flask, render_template, abort, make_response, redirect
 
 from data import talks_by_id, talks_at_the_same_time, coming_up_next, talks
 from utils import get_css
@@ -44,6 +44,16 @@ def talk_page(session_id):
         delta=format_timedelta(datetime.now(timezone.utc) - talk.start, threshold=1.5, locale=talk.language),
         debug=app.debug
     )
+
+
+@app.route("/<string:session_id>/chat_room")
+def chat_redirect(session_id):
+    try:
+        talk = talks_by_id[session_id]
+    except KeyError:
+        abort(404)
+        return
+    return redirect(talk.chat_room_url)
 
 
 if app.debug:
