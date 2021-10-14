@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import List, Dict
 
 from dateutil.parser import parse
@@ -48,6 +48,10 @@ class Talk:
         return f"https://schedule.matomocamp.org/matomocamp-2021/talk/{self.id}/"
 
     @property
+    def feedback_url(self) -> str:
+        return self.schedule_url + "feedback/"
+
+    @property
     def chat_room(self) -> str:
         return chat_rooms[self.id]
 
@@ -78,6 +82,10 @@ class Talk:
         if not self.is_workshop:
             return "#"
         return workshop_urls[self.id]
+
+    @property
+    def has_already_started(self):
+        return datetime.now(timezone.utc) > talk.start
 
 
 talks = []

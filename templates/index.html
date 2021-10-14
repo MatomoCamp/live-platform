@@ -64,6 +64,10 @@
         <dt>Chat Room</dt>
         <dd><a target="_blank" href="{{ talk.chat_room_url }}"><code>{{ talk.chat_room_id }}</code></a></dd>
     </dl>
+    {% if talk.has_already_started %}
+        <p><a target="_blank" class="btn btn-secondary" href="{{ talk.feedback_url }}">Give Feedback</a></p>
+    {% endif %}
+
     <p>{{ talk.abstract }}</p>
 
     {% macro talk_item(t) -%}
