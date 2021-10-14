@@ -5,7 +5,7 @@ from typing import List, Dict
 
 from dateutil.parser import parse
 
-from chat_rooms import chat_rooms
+from urls import chat_rooms, workshop_urls
 
 track_colors = {
     "Privacy": "#F38334",
@@ -68,6 +68,16 @@ class Talk:
     @property
     def track_color(self) -> str:
         return track_colors[self.track]
+
+    @property
+    def is_workshop(self) -> bool:
+        return self.room == "Workshop Room"
+
+    @property
+    def workshop_url(self) -> str:
+        if not self.is_workshop:
+            return "#"
+        return workshop_urls[self.id]
 
 
 talks = []

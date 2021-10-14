@@ -32,6 +32,13 @@ chat_rooms = {
     "ZBWZHJ": "cleaninsights-workshop",
 }
 
+workshop_urls = {
+    "PBWV7L": "https://example.com",
+    "GR9YQZ": "https://example.com",
+    "ZBWZHJ": "https://example.com",
+    "Y9AAMG": "https://example.com",
+}
+
 for name in chat_rooms.values():
     for letter in name:
         assert letter in set(ascii_lowercase).union(set(digits)).union({"-"})
