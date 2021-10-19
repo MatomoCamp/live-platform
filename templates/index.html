@@ -83,12 +83,14 @@
     {%- endmacro %}
 
 
-    <h3>At the same time</h3>
-    <ul class="nav flex-column">
-        {% for other_talk in others %}
-            {{ talk_item(other_talk) }}
-        {% endfor %}
-    </ul>
+    {% if others %}
+        <h3>At the same time</h3>
+        <ul class="nav flex-column">
+            {% for other_talk in others %}
+                {{ talk_item(other_talk) }}
+            {% endfor %}
+        </ul>
+    {% endif %}
     {% if next %}
         <h3>Coming up next</h3>
         <ul class="nav flex-column">
