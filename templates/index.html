@@ -9,6 +9,13 @@
     {% else %}
         <link href="/static/main.css" rel="stylesheet">
     {% endif %}
+    <!-- Source: https://github.com/MatomoCamp/live-platform -->
+    <meta name="robots" content="noindex">
+    <meta property="og:title" content="MatomoCamp Livestream -- {{ talk.title }}">
+    <meta property="og:description"
+          content="{{ talk.abstract }}">
+    <meta property="og:url" content="https://live.matomocamp.org/{{ talk.id }}">
+    <meta property="twitter:card" content="summary">
     <!-- Matomo -->
     <script>
         var _paq = window._paq = window._paq || [];
