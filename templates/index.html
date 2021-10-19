@@ -50,11 +50,11 @@
 <div id="description" class="container">
     <h1>
         {{ talk.title }}
-        <span class="badge rounded-pill bg-primary">{{ talk.room }}</span>
+        <span class="badge rounded-pill" style="background: {{ talk.track_color }}">{{ talk.track }}</span>
     </h1>
     <p>
         by {{ talk.speaker_names|join(", ") }}
-        <span class="badge rounded-pill" style="background: {{ talk.track_color }}">{{ talk.track }}</span>
+        <span class="badge rounded-pill bg-primary">{{ talk.room }}</span>
     </p>
     <dl>
         <dt>Language</dt>
@@ -108,7 +108,7 @@
     {% set livestream_url,livestream_name=talk.livestream_url %}
     <div id="video-wrapper">
         <video-js id="vid1" controls class="vjs-16-9"
-                  poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
+                  poster="https://matomocamp.org/wp-content/uploads/2021/10/matomo-camp-light-bg.png">
             <source
                     src="{{ livestream_url }}"
                     type="application/x-mpegURL">
