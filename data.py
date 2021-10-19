@@ -1,11 +1,20 @@
 import json
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import List, Dict
+from random import randint, random
+from typing import List, Dict, Tuple
 
 from dateutil.parser import parse
 
 from urls import chat_rooms, workshop_urls
+
+STREAM_FALLBACKS = True
+
+alternative_stream_hosts = {
+    "Alternative Stream 1": "https://matomocamp-stream.lw1.at/"
+}
+alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
+alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
 
 track_colors = {
     "Privacy": "#F38334",
@@ -63,13 +72,25 @@ class Talk:
     def chat_room_url(self) -> str:
         return "https://chat.matomocamp.org/#/room/" + self.chat_room_id
 
+    def livestream_host(self) -> Tuple[str, str]:
+        livestream_host = "https://stream-mtmc-2021.cloud-ed.fr/"
+        livestream_name = "Main Livestream"
+        if STREAM_FALLBACKS:
+            use_original_stream = random() > 0.25
+            if use_original_stream:
+                return livestream_host, livestream_name
+            num = randint(0, len(alternative_stream_hosts) - 1)
+            return alternative_stream_hosts_urls[num], alternative_stream_hosts_names[num]
+        return livestream_host, livestream_name
+
     @property
-    def livestream_url(self) -> str:
+    def livestream_url(self) -> Tuple[str, str]:
+        livestream_host, livestream_name = self.livestream_host()
         if self.room == "Livestream Room 1":
-            return "https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
+            return livestream_host + "hls/stream.m3u8", livestream_name
         if self.room == "Livestream Room 2":
-            return "https://stream-mtmc-2021.cloud-ed.fr/hls/stream2.m3u8"
-        return ""
+            return livestream_host + "hls/stream2.m3u8", livestream_name
+        return "", "No Stream"
 
     @property
     def track_color(self) -> str:

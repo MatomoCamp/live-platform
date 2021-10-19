@@ -105,13 +105,17 @@
         <a class="btn btn-primary btn-lg" href="{{ talk.workshop_url }}">Join Workshop</a>
     </div>
 {% else %}
+    {% set livestream_url,livestream_name=talk.livestream_url %}
     <div id="video-wrapper">
         <video-js id="vid1" controls class="vjs-16-9"
                   poster="https://matomocamp.org/wp-content/uploads/2021/05/matomo-camp.png">
             <source
-                    src="{{ talk.livestream_url }}"
+                    src="{{ livestream_url }}"
                     type="application/x-mpegURL">
         </video-js>
+        {% if livestream_name != "Main Livestream" %}
+            <p>using {{ livestream_name }}</p>
+        {% endif %}
     </div>
 {% endif %}
 <div class="ratio ratio-16x9" id="chat-wrapper">
