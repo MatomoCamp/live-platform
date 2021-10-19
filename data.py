@@ -8,7 +8,7 @@ from dateutil.parser import parse
 
 from urls import chat_rooms, workshop_urls
 
-STREAM_FALLBACKS = True
+STREAM_FALLBACKS = False
 
 alternative_stream_hosts = {
     "Alternative Stream 1": "https://matomocamp-stream.lw1.at/"
