@@ -67,6 +67,8 @@ class Talk:
     def livestream_url(self) -> str:
         if self.room == "Livestream Room 1":
             return "https://stream-mtmc-2021.cloud-ed.fr/hls/stream.m3u8"
+        if self.room == "Livestream Room 2":
+            return "https://stream-mtmc-2021.cloud-ed.fr/hls/stream2.m3u8"
         return ""
 
     @property
