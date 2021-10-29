@@ -61,7 +61,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ t.title }}</h5>
                         <p class="card-text">by {{ t.speaker_names|join(", ") }}</p>
-                        <a href="{{ url_for("talk_page",session_id=t.id) }}" class="card-link">{{ t.room }}</a>
+                        <a href="{{ url_for("talk_page",session_id=t.id) }}" class="card-link">Watch in {{ t.room }}</a>
                         <a href="{{ t.schedule_url }}" class="card-link">Details</a>
                         <a href="{{ t.chat_room_url }}" class="card-link">Chat</a>
                     </div>
