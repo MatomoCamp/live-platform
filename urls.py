@@ -30,6 +30,7 @@ chat_rooms = {
     "XTF7GX": "tips-and-tricks",
     "Y9AAMG": "host-own-instance",
     "ZBWZHJ": "cleaninsights-workshop",
+    "QQJ3ZS": "privacy-in-web-analytics"
 }
 
 workshop_urls = {
