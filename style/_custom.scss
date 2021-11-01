@@ -60,5 +60,14 @@
 }
 
 .vjs-poster {
-  background-color: #eff0f1!important;
+  background-color: #eff0f1 !important;
+}
+
+.stream-footer {
+  margin: 1rem;
+  img {
+    display: inline-block;
+    width: 150px;
+    height: auto;
+  }
 }

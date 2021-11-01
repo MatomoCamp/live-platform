@@ -122,8 +122,15 @@
                     src="{{ livestream_url }}"
                     type="application/x-mpegURL">
         </video-js>
-        {% if livestream_name != "Main Livestream" %}
-            <p>using {{ livestream_name }}</p>
+        {% if livestream_name == "Main Livestream" %}
+            <p class="stream-footer">
+                Stream provided by
+                <a href="https://empreintedigitale.fr/">
+                    <img class="logo" src="/static/empreintedigitale-logo.svg" alt="Empreinte Digitale">
+                </a>
+            </p>
+        {% else %}
+            <p class="stream-footer">using {{ livestream_name }}</p>
         {% endif %}
     </div>
 {% endif %}

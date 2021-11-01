@@ -11,7 +11,8 @@ from urls import chat_rooms, workshop_urls
 STREAM_FALLBACKS = False
 
 alternative_stream_hosts = {
-    "Alternative Stream 1": "https://matomocamp-stream.lw1.at/"
+    "Alternative Stream 1": "https://stream-fallback1.matomocamp.org/",
+    "Alternative Stream 2": "https://matomocamp-stream.lw1.at/",
 }
 alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
 alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
@@ -76,7 +77,7 @@ class Talk:
         livestream_host = "https://stream-mtmc-2021.cloud-ed.fr/"
         livestream_name = "Main Livestream"
         if STREAM_FALLBACKS:
-            use_original_stream = random() > 0.25
+            use_original_stream = random() > 0.33
             if use_original_stream:
                 return livestream_host, livestream_name
             num = randint(0, len(alternative_stream_hosts) - 1)
