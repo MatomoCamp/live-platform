@@ -66,8 +66,10 @@
     <dl>
         <dt>Language</dt>
         <dd>{{ talk.full_language }}</dd>
-        <dt>Starts</dt>
-        <dd>{{ delta }}</dd>
+        {% if delta %}
+            <dt>Starts</dt>
+            <dd>in {{ delta }}</dd>
+        {% endif %}
         <dt>Chat Room</dt>
         <dd><a target="_blank" href="{{ talk.chat_room_url }}"><code>{{ talk.chat_room_id }}</code></a></dd>
         <dt>Schedule</dt>

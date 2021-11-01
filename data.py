@@ -153,7 +153,6 @@ def talks_at_the_same_time(talk: Talk) -> List[Talk]:
 
 def coming_up_next(talk: Talk) -> List[Talk]:
     others = []
-    print(talk.start.time().hour)
     if talk.start.time().hour == 11 - 1:
         delta = timedelta(hours=2)
     else:

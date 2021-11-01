@@ -35,13 +35,17 @@ def talk_page(session_id):
     except KeyError:
         abort(404)
         return
+    tdelta = talk.start - datetime.now(timezone.utc).replace(day=3)
+    delta_pretty = None
+    if tdelta.total_seconds() > 0:
+        delta_pretty = format_timedelta(tdelta, threshold=1.5, locale=talk.language)
     return render_template(
         "index.html",
         talk=talk,
         title="Test",
         others=talks_at_the_same_time(talk),
         next=coming_up_next(talk),
-        delta=format_timedelta(datetime.now(timezone.utc) - talk.start, threshold=1.5, locale=talk.language),
+        delta=delta_pretty,
         debug=app.debug
     )
 
