@@ -35,7 +35,7 @@ def talk_page(session_id):
     except KeyError:
         abort(404)
         return
-    tdelta = talk.start - datetime.now(timezone.utc).replace(day=3)
+    tdelta = talk.start - datetime.now(timezone.utc)
     delta_pretty = None
     if tdelta.total_seconds() > 0:
         delta_pretty = format_timedelta(tdelta, threshold=1.5, locale=talk.language)
