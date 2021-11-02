@@ -34,10 +34,10 @@ chat_rooms = {
 }
 
 workshop_urls = {
-    "PBWV7L": "https://example.com",
-    "GR9YQZ": "https://example.com",
-    "ZBWZHJ": "https://example.com",
-    "Y9AAMG": "https://example.com",
+    "PBWV7L": "https://bbb-mtmc-2021.cloud-ed.fr/b/adm-4x6-d69-3j3",
+    "GR9YQZ": "https://bbb-mtmc-2021.cloud-ed.fr/b/adm-utm-dis-kbn",
+    "ZBWZHJ": "https://bbb-mtmc-2021.cloud-ed.fr/b/adm-y8m-nzp-x8r",
+    "Y9AAMG": "https://bbb-mtmc-2021.cloud-ed.fr/b/adm-s3t-fj8-yt3",
 }
 
 for name in chat_rooms.values():
