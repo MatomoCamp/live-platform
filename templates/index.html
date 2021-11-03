@@ -113,6 +113,15 @@
 </div>
 {% if talk.is_workshop %}
     <div class="large-button-wrapper">
+        {% if talk.id == "PBWV7L" %}
+            <p class="lead">
+                Dieser Workshop wird aufgezeichnet. Bitte treten Sie nur bei bzw. aktivieren Sie Ihr
+                Mikrofon nur, wenn Sie damit einverstanden sind. Die Aufzeichnung wird unter der
+                <a href="https://creativecommons.org/licenses/by/4.0/deed">
+                    Creative Commons Attribution 4.0 International (CC BY 4.0)
+                </a> Lizenz veröffentlicht.
+            </p>
+        {% endif %}
         <a class="btn btn-primary btn-lg" href="{{ talk.workshop_url }}">Join Workshop</a>
     </div>
 {% else %}
