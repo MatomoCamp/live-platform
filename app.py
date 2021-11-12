@@ -8,6 +8,9 @@ from utils import get_css
 
 app = Flask(__name__)
 
+not_yet_published_message = "The recording for this talk has not yet been published." \
+                            "Please come back later or follow us on social media to be notified."
+
 
 @app.route("/")
 def home():
@@ -58,6 +61,30 @@ def chat_redirect(session_id):
         abort(404)
         return
     return redirect(talk.chat_room_url)
+
+
+@app.route("/<string:session_id>/recording")
+def recording_redirect(session_id):
+    try:
+        talk = talks_by_id[session_id]
+    except KeyError:
+        abort(404)
+        return
+    if not talk.recording_url:
+        return not_yet_published_message, 404
+    return redirect(talk.recording_url)
+
+
+@app.route("/<string:session_id>/recording_embed")
+def recording_embed_redirect(session_id):
+    try:
+        talk = talks_by_id[session_id]
+    except KeyError:
+        abort(404)
+        return
+    if not talk.recording_embed_url:
+        return not_yet_published_message, 404
+    return redirect(talk.recording_embed_url)
 
 
 if app.debug:

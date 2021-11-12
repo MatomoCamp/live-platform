@@ -40,6 +40,10 @@ workshop_urls = {
     "Y9AAMG": "https://bbb-mtmc-2021.cloud-ed.fr/b/adm-s3t-fj8-yt3",
 }
 
+recording_ids = {
+    "G8K8AV": "hvT8uffTv5VUHuTBmKpTSw"
+}
+
 for name in chat_rooms.values():
     for letter in name:
         assert letter in set(ascii_lowercase).union(set(digits)).union({"-"})

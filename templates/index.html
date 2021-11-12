@@ -125,23 +125,32 @@
         <a class="btn btn-primary btn-lg" href="{{ talk.workshop_url }}">Join Workshop</a>
     </div>
 {% else %}
-    {% set livestream_url,livestream_name=talk.livestream_url %}
     <div id="video-wrapper">
-        <video-js id="vid1" controls class="vjs-16-9"
-                  poster="https://matomocamp.org/wp-content/uploads/2021/10/matomo-camp-light-bg.png">
-            <source
-                    src="{{ livestream_url }}"
-                    type="application/x-mpegURL">
-        </video-js>
-        {% if livestream_name == "Main Livestream" %}
-            <p class="stream-footer">
-                Stream provided by
-                <a href="https://empreintedigitale.fr/" target="_blank" rel="noopener">
-                    <img class="logo" src="/static/empreintedigitale-logo.svg" alt="Empreinte Digitale">
-                </a>
-            </p>
+        {% if talk.recording_id %}
+            <div class="ratio ratio-16x9" id="peertube-iframe">
+                <iframe src="{{ talk.recording_embed_url }}"
+                        allowfullscreen
+                        sandbox="allow-same-origin allow-scripts allow-popups"
+                ></iframe>
+            </div>
         {% else %}
-            <p class="stream-footer">using {{ livestream_name }}</p>
+            {% set livestream_url,livestream_name=talk.livestream_url %}
+            <video-js id="vid1" controls class="vjs-16-9"
+                      poster="https://matomocamp.org/wp-content/uploads/2021/10/matomo-camp-light-bg.png">
+                <source
+                        src="{{ livestream_url }}"
+                        type="application/x-mpegURL">
+            </video-js>
+            {% if livestream_name == "Main Livestream" %}
+                <p class="stream-footer">
+                    Stream provided by
+                    <a href="https://empreintedigitale.fr/" target="_blank" rel="noopener">
+                        <img class="logo" src="/static/empreintedigitale-logo.svg" alt="Empreinte Digitale">
+                    </a>
+                </p>
+            {% else %}
+                <p class="stream-footer">using {{ livestream_name }}</p>
+            {% endif %}
         {% endif %}
     </div>
 {% endif %}

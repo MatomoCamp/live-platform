@@ -2,11 +2,11 @@ import json
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from random import randint, random
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 
 from dateutil.parser import parse
 
-from urls import chat_rooms, workshop_urls
+from urls import chat_rooms, workshop_urls, recording_ids
 
 STREAM_FALLBACKS = False
 
@@ -92,6 +92,24 @@ class Talk:
         if self.room == "Livestream Room 2":
             return livestream_host + "hls/stream2.m3u8", livestream_name
         return "", "No Stream"
+
+    @property
+    def recording_id(self) -> Optional[str]:
+        if self.id in recording_ids:
+            return recording_ids[self.id]
+        return None
+
+    @property
+    def recording_url(self) -> Optional[str]:
+        if self.recording_id:
+            return "https://video.matomocamp.org/w/" + self.recording_id
+        return None
+
+    @property
+    def recording_embed_url(self) -> Optional[str]:
+        if self.recording_id:
+            return "https://video.matomocamp.org/videos/embed/" + self.recording_id
+        return None
 
     @property
     def track_color(self) -> str:
