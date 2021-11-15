@@ -48,6 +48,7 @@ recording_ids = {
     "PBWV7L": "oiMkGGpP3mDNsJNL9d835B",
     "LKVJQ8": "8jEpE55dohwRHsQwPr5p6b",
     "DM8S7W": "oHbeE3zkk625HUvDVDtiVN",
+    "LZ8NYG": "mmcu1wTvNLThuLti46Awza",
 }
 
 for name in chat_rooms.values():
