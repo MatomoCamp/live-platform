@@ -52,6 +52,12 @@ recording_ids = {
     "WGWW8R": "7jLhv438Q5vynKVMZ8ZqNb",
     "GDGZXF": "aeDEypqe36V3rit3zZ87k9",
     "9JHC8H": "nFQJq2ebTNQjeDCUTtEJo5",
+    "GR9YQZ": "gqEzAyzDJz4KLR9gwygVK2",
+    "GF7XD9": "dYuZAcGqWQYjtGPTSvacWY",
+    "G98E3P": "34s6TgxQTWwsAQaqwHBv3U",
+    "QRSQ8D": "bSaUBU9X5nBeMp7pWdNAGW",
+    "3TTRKG": "3mx6wAUcUxwVC5LfpqXg2A",
+    "QQJ3ZS": "vQAunDod7FvMSD348rtxrv",
 }
 
 for name in chat_rooms.values():
