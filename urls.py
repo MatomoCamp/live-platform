@@ -65,6 +65,10 @@ recording_ids = {
     "HU8NSN": "qKNiW52zgX9tXGBFrBUwK8",
     "Y9AAMG": "xyiEgWGSUZVERTDcg2HqbB",
     "URWXGR": "9cExMatGbi3xH4hjJgndvt",
+    "ENHZCR": "dEYt3WxM5V4jBk6BhT5oab",
+    "GMUXZZ": "7N9bhdSHYq6zvfrt5E8mwN",
+    "8HSWJD": "cBxLoU5N9g23C7QbBFsAf6"
+
 }
 
 for name in chat_rooms.values():
