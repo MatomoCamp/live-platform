@@ -130,9 +130,9 @@
             {% if talk.archive_url %}
                 <div class="archive-buttons">
                     <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}">Browse Archive</a>
-                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}/output.mp4"
+                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}output.mp4"
                        download="{{ talk.title }}.mp4">Download Recording</a>
-                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}/output.opus"
+                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}output.opus"
                        download="{{ talk.title }}.opus">Download Audio</a>
                 </div>
             {% endif %}
