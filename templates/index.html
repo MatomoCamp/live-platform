@@ -127,6 +127,15 @@
 {% else %}
     <div id="video-wrapper">
         {% if talk.recording_id %}
+            {% if talk.archive_url %}
+                <div class="archive-buttons">
+                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}">Browse Archive</a>
+                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}/output.mp4"
+                       download="{{ talk.title }}.mp4">Download Recording</a>
+                    <a class="btn btn-primary btn-lg" href="{{ talk.archive_url }}/output.opus"
+                       download="{{ talk.title }}.opus">Download Audio</a>
+                </div>
+            {% endif %}
             <div class="ratio ratio-16x9" id="peertube-iframe">
                 <iframe src="{{ talk.recording_embed_url }}"
                         allowfullscreen

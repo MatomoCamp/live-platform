@@ -6,7 +6,7 @@ from typing import List, Dict, Tuple, Optional
 
 from dateutil.parser import parse
 
-from urls import chat_rooms, workshop_urls, recording_ids
+from urls import chat_rooms, workshop_urls, recording_ids, archive_names
 from utils import translated_dict_to_string, time_plusminus15min
 
 STREAM_FALLBACKS = False
@@ -96,7 +96,17 @@ class Talk:
 
     @property
     def chat_room_url(self) -> str:
-        return "https://chat.matomocamp.org/#/room/" + self.chat_room_id
+        try:
+            return f"https://archive.matomocamp.org/{self.year}/{archive_names[self.id]}/chat/"
+        except KeyError:
+            return "https://chat.matomocamp.org/#/room/" + self.chat_room_id
+
+    @property
+    def archive_url(self) -> Optional[str]:
+        try:
+            return f"https://archive.matomocamp.org/{self.year}/{archive_names[self.id]}/"
+        except KeyError:
+            return None
 
     def livestream_host(self) -> Tuple[str, str]:
         livestream_host = "https://stream-mtmc-2021.cloud-ed.fr/"

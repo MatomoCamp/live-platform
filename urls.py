@@ -15,7 +15,7 @@ chat_rooms = {
     "GMUXZZ": "conversion-rate-optimization",
     "GR9YQZ": "matomo-kompakt",
     "HU8NSN": "risk-for-a-dpo",
-    "KDBDPX": "translating-matomo",
+    # "KDBDPX": "translating-matomo",
     "LKVJQ8": "public-sector",
     "LZ8NYG": "compliant-with-privacy-regulations",
     "M9XPRG": "cleaninsights-talk",
@@ -26,11 +26,45 @@ chat_rooms = {
     "QRSQ8D": "break-and-fix",
     "URWXGR": "millions-of-pageviews",
     "WGWW8R": "surveillance-societies",
-    "XAAHDQ": "open-source-data-visualization",
+    # "XAAHDQ": "open-source-data-visualization",
     "XTF7GX": "tips-and-tricks",
     "Y9AAMG": "host-own-instance",
     "ZBWZHJ": "cleaninsights-workshop",
     "QQJ3ZS": "privacy-in-web-analytics"
+}
+
+archive_names = {
+    "3TTRKG": "trackingSPA",
+    "7AJEKD": "Background Tracking",
+    "8HSWJD": "Q&A",
+    "9JHC8H": "Closing",
+    "DM8S7W": "SAAS",
+    "ENHZCR": "GDPR Masses",
+    "FDEE9Z": "Wrapped",
+    "G8K8AV": "incidences côté infra",
+    "G98E3P": "User Feedback",
+    "GDGZXF": "Opening",
+    "GF7XD9": "Tag Manager Basics",
+    "GMUXZZ": "Conversion rate",
+    "GR9YQZ": "Matomo Kompakt",
+    "HU8NSN": "DPO",
+    # "KDBDPX": "translating-matomo",
+    "LKVJQ8": "Public Sector",
+    "LZ8NYG": "Stay Compliant",
+    "M9XPRG": "Cleaninsights",
+    "MKKVHX": "Business",
+    "N3U3BT": "Metabase",
+    "PBWV7L": "SEO",
+    "PX7EHX": "configurer RGPD",
+    "QRSQ8D": "Break Matomo",
+    "URWXGR": "Million Pageviews",
+    "WGWW8R": "Surveillance Societies",
+    # "XAAHDQ": "open-source-data-visualization",
+    "XTF7GX": "Tips and Tricks",
+    "Y9AAMG": "Host your own Instance",
+    # "ZBWZHJ": "cleaninsights-workshop",
+    "QQJ3ZS": "PII"
+
 }
 
 workshop_urls = {

@@ -76,3 +76,13 @@
 .time {
   font-style: italic;
 }
+
+.archive-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .btn {
+    margin: 1rem;
+  }
+}
