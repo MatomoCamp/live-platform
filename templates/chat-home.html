@@ -228,6 +228,9 @@
     .room_text {
         display: contents;
     }
+    .room_text .time {
+        font-weight: normal;
+    }
 
     .btn {
         margin-top: 0;
@@ -258,6 +261,7 @@
         flex-wrap: wrap;
         padding: 40px 50px 60px 50px;
     }
+
     .room_card {
         margin-right: 1rem;
     }
@@ -318,9 +322,9 @@
             </a>
         </div>
         <div class="card">
-            <p>Businesses</p>
-            <p class="description">You want to find someone who can help your business?</p>
-            <a href="/#/room/#businesses:matomocamp.org">
+            <p>Q&A</p>
+            <p class="description">Get your Matomo questions answered by experts.</p>
+            <a href="/#/room/#qanda:matomocamp.org">
                 <div class="button">Join</div>
             </a>
         </div>
@@ -354,19 +358,10 @@
     </div>
 
     <div class="room_directory">
-        <div class="room_card">
-            <div class="room_text">
-                <p>Matomo Tag Manager from A to Z (Pre-Event)</p>
-            </div>
-            <div class="btn"><a href="/#/room/#tag-manager-atoz:matomocamp.org">
-                <div class="button">Join</div>
-            </a>
-            </div>
-        </div>
         {% for talk in talks %}
             <div class="room_card">
                 <div class="room_text">
-                    <p>{{ talk.title }}</p>
+                    <p>{{ talk.title }}<br><span class="time">{{ talk.formatted_datetimerange }}</span></p>
                 </div>
                 <div class="btn"><a href="/#/room/{{ talk.chat_room_id }}">
                     <div class="button">

@@ -2,7 +2,7 @@
 node_modules
 video.js
 __pycache__/
-matomocamp-2021_sessions.json
+matomocamp-*_sessions.json
 static/main.css
 static/main.css.map
 venv/

@@ -7,6 +7,7 @@ from typing import List, Dict, Tuple, Optional
 from dateutil.parser import parse
 
 from urls import chat_rooms, workshop_urls, recording_ids
+from utils import translated_dict_to_string, time_plusminus15min
 
 STREAM_FALLBACKS = False
 
@@ -18,20 +19,39 @@ alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
 alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
 
 track_colors = {
-    "Privacy": "#F38334",
-    "System administration": "#95C748",
-    "Contributing": "#8E0F0F",
-    "Digital Analytics": "#3152A0",
-    "Using Matomo": "#35BFC0",
-    "Business": "#673AB7",
-    "Use Cases": "#1B5E20",
-    "MatomoCamp": "#404040"
+    2021: {
+        "Privacy": "#F38334",
+        "System administration": "#95C748",
+        "Contributing": "#8E0F0F",
+        "Digital Analytics": "#3152A0",
+        "Using Matomo": "#35BFC0",
+        "Business": "#673AB7",
+        "Use Cases": "#1B5E20",
+        "MatomoCamp": "#404040"
+    },
+    2022: {
+        "Privacy": "#F38334",
+        "System administration": "#95C748",
+        "Integration": "#8E0F0F",
+        "Digital Analytics": "#3152A0",
+        "Using Matomo": "#35BFC0",
+        "Business": "#673AB7",
+        "Use Cases": "#1B5E20",
+        "MatomoCamp": "#404040",
+        "Plugin Development": "#F00DE7",
+        "Contributing": "#BF360C",
+        "Other Free Analytics": "#673AB7",
+    },
 }
+
+current_year = 2022
+past_years = [2021]
 
 
 @dataclass
 class Talk:
     id: str
+    year: int
     title: str
     session_type: str
     track: str
@@ -50,6 +70,8 @@ class Talk:
             return "German"
         elif self.language == "fr":
             return "French"
+        elif self.language == "it":
+            return "Italian"
         else:
             return "English"
 
@@ -63,7 +85,10 @@ class Talk:
 
     @property
     def chat_room(self) -> str:
-        return chat_rooms[self.id]
+        try:
+            return chat_rooms[self.id]
+        except KeyError:
+            return "CHATROOM-MISSING"
 
     @property
     def chat_room_id(self) -> str:
@@ -113,7 +138,7 @@ class Talk:
 
     @property
     def track_color(self) -> str:
-        return track_colors[self.track]
+        return track_colors[self.year][self.track]
 
     @property
     def is_workshop(self) -> bool:
@@ -129,29 +154,59 @@ class Talk:
     def has_already_started(self):
         return datetime.now(timezone.utc) > talk.start
 
+    @property
+    def formatted_datetimerange(self) -> str:
+        weekday_data = {
+            4: {
+                "en": "Thu",
+                "de": "Do",
+                "fr": "Jeu",
+                "it": "Gio",
+            },
+            5: {
+                "en": "Fri",
+                "de": "Fr",
+                "fr": "Ven",
+                "it": "Ven",
+            }
+        }
+        print(self.start, self.end)
+        weekday = weekday_data[self.start.isoweekday()][self.language]
+        return weekday \
+               + " " \
+               + self.start.strftime("%H:%M") \
+               + "–" \
+               + self.end.strftime("%H:%M")
+
 
 talks = []
-with open("matomocamp-2021_sessions.json") as f:
-    data: List[Dict] = json.load(f)
-for t in data:
-    talk = Talk(
-        id=t["ID"],
-        title=t["Title"],
-        session_type=t["Session type"]["en"],
-        track=t["Track"]["en"],
-        abstract=t["Abstract"],
-        description=t["Description"],
-        duration=t["Duration"],
-        language=t["Language"],
-        speaker_names=t["Speaker names"],
-        room=t["Room"]["en"],
-        start=parse(t["Start"]),
-        end=parse(t["Start"])
-    )
-    talks.append(talk)
-del data
+for year in [2021, 2022]:
+    with open(f"matomocamp-{year}_sessions.json") as f:
+        data: List[Dict] = json.load(f)
+    for t in data:
+        if t["Proposal state"] in {"withdrawn"}:
+            continue
+        talk = Talk(
+            id=t["ID"],
+            year=year,
+            title=t["Title"],
+            session_type=translated_dict_to_string(t["Session type"]),
+            track=t["Track"]["en"],
+            abstract=t["Abstract"],
+            description=t["Description"],
+            duration=t["Duration"],
+            language=t["Language"],
+            speaker_names=t["Speaker names"],
+            room=t["Room"]["en"],
+            start=parse(t["Start"]),
+            end=parse(t["End"])
+        )
+        talks.append(talk)
+    del data
 
 talks.sort(key=lambda t: (t.start, t.title))
+
+talks_of_this_year = [t for t in talks if t.year == current_year]
 
 talks_by_id = {}
 
@@ -164,7 +219,7 @@ def talks_at_the_same_time(talk: Talk) -> List[Talk]:
     for t in talks:
         if t == talk:
             continue
-        if t.start == talk.start:
+        if t.start in time_plusminus15min(talk.start):
             others.append(t)
     return others
 
@@ -176,6 +231,6 @@ def coming_up_next(talk: Talk) -> List[Talk]:
     else:
         delta = timedelta(hours=1)
     for t in talks:
-        if t.start == talk.start + delta:
+        if t.start in time_plusminus15min(talk.start + delta):
             others.append(t)
     return others

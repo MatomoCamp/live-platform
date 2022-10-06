@@ -65,9 +65,14 @@
 
 .stream-footer {
   margin: 1rem;
+
   img {
     display: inline-block;
     width: 150px;
     height: auto;
   }
+}
+
+.time {
+  font-style: italic;
 }

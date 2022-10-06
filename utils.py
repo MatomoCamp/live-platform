@@ -1,4 +1,6 @@
+from datetime import datetime, timedelta
 from pathlib import Path
+from typing import Dict, Set
 
 import sass
 
@@ -28,6 +30,23 @@ def save_css():
         f.write(css)
     with sourcemap.open("w") as f:
         f.write(sourcemap_text)
+
+
+def translated_dict_to_string(data: Dict[str, str]) -> str:
+    """
+    get first value of dictionary
+    {"de":"test"} -> "test"
+    {"en":"test"} -> "test"
+    """
+    return next(iter(data.values()))
+
+
+def time_plusminus15min(time: datetime) -> Set[datetime]:
+    times = {time}
+    min15 = timedelta(minutes=15)
+    times.add(time + min15)
+    times.add(time - min15)
+    return times
 
 
 if __name__ == '__main__':
