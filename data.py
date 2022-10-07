@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from random import randint, random
 from typing import List, Dict, Tuple, Optional
 
+import pytz
 from dateutil.parser import parse
 
 from urls import chat_rooms, workshop_urls, recording_ids, archive_names
@@ -17,6 +18,8 @@ alternative_stream_hosts = {
 }
 alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
 alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
+
+conference_timezone = pytz.timezone("Europe/Vienna")
 
 track_colors = {
     2021: {
@@ -181,10 +184,11 @@ class Talk:
             }
         }
         print(self.start, self.end)
+        start_in_right_timezone = self.start.astimezone(conference_timezone)
         weekday = weekday_data[self.start.isoweekday()][self.language]
         return weekday \
                + " " \
-               + self.start.strftime("%H:%M") \
+               + start_in_right_timezone.strftime("%H:%M") \
                + "–" \
                + self.end.strftime("%H:%M")
 
