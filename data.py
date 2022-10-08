@@ -80,7 +80,7 @@ class Talk:
 
     @property
     def schedule_url(self) -> str:
-        return f"https://schedule.matomocamp.org/matomocamp-2021/talk/{self.id}/"
+        return f"https://schedule.matomocamp.org/matomocamp-{self.year}/talk/{self.id}/"
 
     @property
     def feedback_url(self) -> str:
