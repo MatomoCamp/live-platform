@@ -220,6 +220,10 @@ for year in [2021, 2022]:
 
 talks.sort(key=lambda t: (t.start, t.title))
 
+for talk in talks:
+    if talk.id not in chat_rooms:
+        print(f"missing chatroom: {talk.id} ({talk.title})")
+
 talks_of_this_year = [t for t in talks if t.year == current_year]
 
 talks_by_id = {}
