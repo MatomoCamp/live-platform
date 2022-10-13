@@ -132,6 +132,10 @@ class Talk:
         return "", "No Stream"
 
     @property
+    def live_url(self) -> str:
+        return "https://live.matomocamp.org/" + self.id
+
+    @property
     def recording_id(self) -> Optional[str]:
         if self.id in recording_ids:
             return recording_ids[self.id]
@@ -192,6 +196,10 @@ class Talk:
                + "–" \
                + self.end.strftime("%H:%M")
 
+    @property
+    def topic(self):
+        return f"{self.title} -- Watch live here: {self.live_url}"
+
 
 talks = []
 for year in [2021, 2022]:
@@ -219,10 +227,6 @@ for year in [2021, 2022]:
     del data
 
 talks.sort(key=lambda t: (t.start, t.title))
-
-for talk in talks:
-    if talk.id not in chat_rooms:
-        print(f"missing chatroom: {talk.id} ({talk.title})")
 
 talks_of_this_year = [t for t in talks if t.year == current_year]
 
@@ -252,3 +256,9 @@ def coming_up_next(talk: Talk) -> List[Talk]:
         if t.start in time_plusminus15min(talk.start + delta):
             others.append(t)
     return others
+
+
+if __name__ == '__main__':
+    for talk in talks:
+        if talk.id not in chat_rooms:
+            print(f"missing chatroom: {talk.id} ({talk.title})")

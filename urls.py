@@ -48,30 +48,30 @@ chat_rooms = {
     # "SXLAJL": "",  # Integrating Matomo in a data stack
     # "R393MD": "",  # Matomo: External Dashboards & Data Visualization
     # "SNEUXP": "",  # Migration de vos datas Google Analytics UA vers Matomo
-    # "QCGUJB": "",  # Linux security hardening on a Matomo installation
-    # "ADJLAW": "",  # Open source dashboards ontop of Matomo with Apache Superset
+    "QCGUJB": "security-hardening",  # Linux security hardening on a Matomo installation
+    "ADJLAW": "dashboards-with-apache-superset",  # Open source dashboards ontop of Matomo with Apache Superset
     # "PYT37H": "",  # Matomo et WordPress comment les connecter ?
-    # "QB8VY8": "",  # Running Matomo with open source technologies such as Kubernetes and docker
+    "QB8VY8": "using-kubernetes-and-docker",  # Running Matomo with open source technologies such as Kubernetes and docker
     # "XGPBTU": "",  # Why Wholesale Distributors in the US should be using Matomo
     # "XMGR83": "",  # Les traductions dans Matomo, comment ça marche?
     # "UKTQD8": "",
     # # Server installation, typical implementation, and Italian GDPR compliance with Matomo (Italian language)
     # "EDHADW": "",  # Tag Manager/Consent solutions
     # "CQ3TRP": "",  # Matomo & Vanilla Analytics
-    # "U9GDMC": "",  # Building Matomo plugins with VueJS.
+    "U9GDMC": "vuejs-in-plugins",  # Building Matomo plugins with VueJS.
     # "TPFDWN": "",  # Get a kick ass dashboard in Matomo
     "SRDLAJ": "das-problem-zu-viel",  # Das Problem "zu viel" - Mehr Insights in Matomo
     # "KDWXFH": "",  # Get started with intranet analytics in Matomo
     "XRVPDS": "das-problem-zu-wenig",  # Das Problem "zu wenig" - Mehr Insights in Matomo
-    # "ZXGJYA": "",  # Improve your SEO with Matomo
-    # "7YDHL7": "",  # Tracking SPA applications with Matomo
-    # "97RZGZ": "",  # Standortermittlung mit Matomo
-    # "FXLH93": "",  # Data Creation and Snowplow Open Source
+    "ZXGJYA": "improve-seo",  # Improve your SEO with Matomo
+    "7YDHL7": "tracking-spas",  # Tracking SPA applications with Matomo
+    "97RZGZ": "standortermittlung",  # Standortermittlung mit Matomo
+    "FXLH93": "snowplow",  # Data Creation and Snowplow Open Source
     # "FUD7JR": "",  # How to use Matomo Log Analysis to retrieve audience data
-    # "BRH8SH": "",  # Datenschutzkonformes Performance Marketing mit Matomo
+    "BRH8SH": "datenschutzkonformes-performance-marketing",  # Datenschutzkonformes Performance Marketing mit Matomo
     # "N3WJCA": "",  # How to create a plugin for Matomo when you are not a developer?
     # "YE9MYB": "",  # Plausible Analytics: Simple, lightweight, open source and privacy-first analytics
-    # "389UYH": "",  # Utilisez Matomo avec Joomla
+    "389UYH": "joomla",  # Utilisez Matomo avec Joomla
     "E893JM": "web-analytics-book",  # The big book about web analytics
     # "WXXXXE": "",  # The ultimate guide to migrate to Matomo: 7 best practices
     "ST38HK": "closing-event-2022",  # MatomoCamp closing
