@@ -37,31 +37,33 @@ chat_rooms = {
     "H7YHTG": "event-introduction-2022",  # Event introduction by the MatomoCamp organizers
     # "JSPF8U": "",  # Yet to be named support talk
     # "PYQY3A": "",  # Monter une infrastructure Matomo qui gère des millions de hits par mois n’est pas si simple
-    # "3DBQCM": "",  # How to create your own Matomo plugin? A technical introduction to developing for Matomo.
+    "3DBQCM": "developing-a-plugin",
+    # How to create your own Matomo plugin? A technical introduction to developing for Matomo.
     "3LRN3P": "ideal-matomo",  # Imagine Ideal Matomo !
     # "EMG79M": "",  # Réussir l'implémentationde Matomo - SOS Villages d'enfants x Elevate
-    # "MWQUT7": "",  # An Inside Look at the Future of Matomo: User Experience + User Connection
+    "MWQUT7": "future-of-matomo",  # An Inside Look at the Future of Matomo: User Experience + User Connection
     # "S37GBU": "",  # Gestion de projet Web Analytics avec Matomo
     "PU7SJR": "contributing-back",  # Contribute back
     # "33QBWR": "",  # Is Matomo only for European companies and authorities?
     # "AXGTWL": "",  # Analysez vos performances digitales avec Matomo
-    # "SXLAJL": "",  # Integrating Matomo in a data stack
-    # "R393MD": "",  # Matomo: External Dashboards & Data Visualization
+    "SXLAJL": "matomo-in-a-data-stack",  # Integrating Matomo in a data stack
+    "R393MD": "external-dashboards-data-visualization",  # Matomo: External Dashboards & Data Visualization
     # "SNEUXP": "",  # Migration de vos datas Google Analytics UA vers Matomo
     "QCGUJB": "security-hardening",  # Linux security hardening on a Matomo installation
     "ADJLAW": "dashboards-with-apache-superset",  # Open source dashboards ontop of Matomo with Apache Superset
     # "PYT37H": "",  # Matomo et WordPress comment les connecter ?
-    "QB8VY8": "using-kubernetes-and-docker",  # Running Matomo with open source technologies such as Kubernetes and docker
-    # "XGPBTU": "",  # Why Wholesale Distributors in the US should be using Matomo
+    "QB8VY8": "using-kubernetes-and-docker",
+    # Running Matomo with open source technologies such as Kubernetes and docker
+    "XGPBTU": "matomo-and-us-distributors",  # Why Wholesale Distributors in the US should be using Matomo
     # "XMGR83": "",  # Les traductions dans Matomo, comment ça marche?
     # "UKTQD8": "",
     # # Server installation, typical implementation, and Italian GDPR compliance with Matomo (Italian language)
-    # "EDHADW": "",  # Tag Manager/Consent solutions
-    # "CQ3TRP": "",  # Matomo & Vanilla Analytics
+    "EDHADW": "tag-manager-and-consent-solutions",  # Tag Manager/Consent solutions
+    "CQ3TRP": "vanilla-analytics",  # Matomo & Vanilla Analytics
     "U9GDMC": "vuejs-in-plugins",  # Building Matomo plugins with VueJS.
-    # "TPFDWN": "",  # Get a kick ass dashboard in Matomo
+    "TPFDWN": "dashboard",  # Get a kick ass dashboard in Matomo
     "SRDLAJ": "das-problem-zu-viel",  # Das Problem "zu viel" - Mehr Insights in Matomo
-    # "KDWXFH": "",  # Get started with intranet analytics in Matomo
+    "KDWXFH": "intranet-analytics",  # Get started with intranet analytics in Matomo
     "XRVPDS": "das-problem-zu-wenig",  # Das Problem "zu wenig" - Mehr Insights in Matomo
     "ZXGJYA": "improve-seo",  # Improve your SEO with Matomo
     "7YDHL7": "tracking-spas",  # Tracking SPA applications with Matomo
@@ -69,11 +71,11 @@ chat_rooms = {
     "FXLH93": "snowplow",  # Data Creation and Snowplow Open Source
     # "FUD7JR": "",  # How to use Matomo Log Analysis to retrieve audience data
     "BRH8SH": "datenschutzkonformes-performance-marketing",  # Datenschutzkonformes Performance Marketing mit Matomo
-    # "N3WJCA": "",  # How to create a plugin for Matomo when you are not a developer?
-    # "YE9MYB": "",  # Plausible Analytics: Simple, lightweight, open source and privacy-first analytics
+    "N3WJCA": "creating-plugins-as-non-developers",  # How to create a plugin for Matomo when you are not a developer?
+    "YE9MYB": "plausible-analytics",
     "389UYH": "joomla",  # Utilisez Matomo avec Joomla
     "E893JM": "web-analytics-book",  # The big book about web analytics
-    # "WXXXXE": "",  # The ultimate guide to migrate to Matomo: 7 best practices
+    "WXXXXE": "migrating-matomo",  # The ultimate guide to migrate to Matomo: 7 best practices
     "ST38HK": "closing-event-2022",  # MatomoCamp closing
 }
 
