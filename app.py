@@ -1,10 +1,10 @@
 from datetime import datetime, timezone
 
 from babel.dates import format_timedelta
-from flask import Flask, render_template, abort, make_response, redirect
+from flask import Flask, render_template, abort, make_response, redirect, request
 
 from data import talks_by_id, talks_at_the_same_time, coming_up_next, talks, talks_of_this_year, current_year, \
-    past_years
+    past_years, alternative_stream_hosts
 from utils import get_css
 
 app = Flask(__name__)
@@ -52,6 +52,13 @@ def talk_page(session_id):
     except KeyError:
         abort(404)
         return
+    alternative_stream = request.args.get('alternative_stream', default=None)
+    if alternative_stream and alternative_stream.isnumeric():
+        alternative_stream_id = int(alternative_stream) if alternative_stream else None
+        if alternative_stream_id > len(alternative_stream_hosts):
+            return redirect(talk.live_url)
+    else:
+        alternative_stream_id = None
     tdelta = talk.start - datetime.now(timezone.utc)
     delta_pretty = None
     if tdelta.total_seconds() > 0:
@@ -63,6 +70,7 @@ def talk_page(session_id):
         others=talks_at_the_same_time(talk),
         next=coming_up_next(talk),
         delta=delta_pretty,
+        alternative_stream_id=alternative_stream_id,
         debug=app.debug
     )
 

@@ -111,9 +111,19 @@ class Talk:
         except KeyError:
             return None
 
-    def livestream_host(self) -> Tuple[str, str]:
+    @property
+    def random_alternative_stream_id(self) -> int:
+        return randint(1, len(alternative_stream_hosts))
+
+    def livestream_host(self, alternative_stream_id=None) -> Tuple[str, str]:
         livestream_host = "https://stream-mtmc-2021.cloud-ed.fr/"
         livestream_name = "Main Livestream"
+        if alternative_stream_id is not None:
+            if alternative_stream_id == 0:
+                return livestream_host, livestream_name
+            return alternative_stream_hosts_urls[alternative_stream_id - 1], \
+                   alternative_stream_hosts_names[alternative_stream_id - 1]
+
         if STREAM_FALLBACKS:
             use_original_stream = random() > 0.33
             if use_original_stream:
@@ -122,9 +132,8 @@ class Talk:
             return alternative_stream_hosts_urls[num], alternative_stream_hosts_names[num]
         return livestream_host, livestream_name
 
-    @property
-    def livestream_url(self) -> Tuple[str, str]:
-        livestream_host, livestream_name = self.livestream_host()
+    def livestream_url(self, alternative_stream_id=None) -> Tuple[str, str]:
+        livestream_host, livestream_name = self.livestream_host(alternative_stream_id)
         if self.room == "Livestream Room 1":
             return livestream_host + "hls/stream.m3u8", livestream_name
         if self.room == "Livestream Room 2":
