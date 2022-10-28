@@ -13,8 +13,8 @@ from utils import translated_dict_to_string, time_plusminus15min
 STREAM_FALLBACKS = False
 
 alternative_stream_hosts = {
-    "Alternative Stream 1": "https://stream-fallback1.matomocamp.org/",
-    "Alternative Stream 2": "https://matomocamp-stream.lw1.at/",
+    "Alternative Stream 1": "https://livestream-mirror1.matomocamp.org",
+    # "Alternative Stream 2": "https://matomocamp-stream.lw1.at/",
 }
 alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
 alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
