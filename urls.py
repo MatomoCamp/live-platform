@@ -36,28 +36,27 @@ chat_rooms = {
 
     "H7YHTG": "event-introduction-2022",  # Event introduction by the MatomoCamp organizers
     # "JSPF8U": "",  # Yet to be named support talk
-    # "PYQY3A": "",  # Monter une infrastructure Matomo qui gère des millions de hits par mois n’est pas si simple
+    "PYQY3A": "monter-une-infrastructure-matomo",  # Monter une infrastructure Matomo qui gère des millions de hits par mois n’est pas si simple
     "3DBQCM": "developing-a-plugin",
     # How to create your own Matomo plugin? A technical introduction to developing for Matomo.
     "3LRN3P": "ideal-matomo",  # Imagine Ideal Matomo !
-    # "EMG79M": "",  # Réussir l'implémentationde Matomo - SOS Villages d'enfants x Elevate
+    "EMG79M": "reussir-limplementation-de-matomo",  # Réussir l'implémentationde Matomo - SOS Villages d'enfants x Elevate
     "MWQUT7": "future-of-matomo",  # An Inside Look at the Future of Matomo: User Experience + User Connection
-    # "S37GBU": "",  # Gestion de projet Web Analytics avec Matomo
+    "S37GBU": "gestion-de-projet-web-analytics",  # Gestion de projet Web Analytics avec Matomo
     "PU7SJR": "contributing-back",  # Contribute back
     # "33QBWR": "",  # Is Matomo only for European companies and authorities?
-    # "AXGTWL": "",  # Analysez vos performances digitales avec Matomo
+    "AXGTWL": "analysez-vos-performances",  # Analysez vos performances digitales avec Matomo
     "SXLAJL": "matomo-in-a-data-stack",  # Integrating Matomo in a data stack
     "R393MD": "external-dashboards-data-visualization",  # Matomo: External Dashboards & Data Visualization
-    # "SNEUXP": "",  # Migration de vos datas Google Analytics UA vers Matomo
+    "SNEUXP": "migration-de-vos-datas-ga-vers-matomo",  # Migration de vos datas Google Analytics UA vers Matomo
     "QCGUJB": "security-hardening",  # Linux security hardening on a Matomo installation
     "ADJLAW": "dashboards-with-apache-superset",  # Open source dashboards ontop of Matomo with Apache Superset
-    # "PYT37H": "",  # Matomo et WordPress comment les connecter ?
+    "PYT37H": "matomo-et-wordpress",  # Matomo et WordPress comment les connecter ?
     "QB8VY8": "using-kubernetes-and-docker",
     # Running Matomo with open source technologies such as Kubernetes and docker
     "XGPBTU": "matomo-and-us-distributors",  # Why Wholesale Distributors in the US should be using Matomo
-    # "XMGR83": "",  # Les traductions dans Matomo, comment ça marche?
-    # "UKTQD8": "",
-    # # Server installation, typical implementation, and Italian GDPR compliance with Matomo (Italian language)
+    "XMGR83": "les-traductions-dans-matomo",  # Les traductions dans Matomo, comment ça marche?
+    "UKTQD8": "matomo-su-kubernetes",
     "EDHADW": "tag-manager-and-consent-solutions",  # Tag Manager/Consent solutions
     "CQ3TRP": "vanilla-analytics",  # Matomo & Vanilla Analytics
     "U9GDMC": "vuejs-in-plugins",  # Building Matomo plugins with VueJS.
