@@ -5,6 +5,15 @@ document.getElementById("iframe").addEventListener("load", function () {
 })
 
 window.HELP_IMPROVE_VIDEOJS = false
+videojs.addLanguage(
+    'en', {
+        "The media could not be loaded, either because the server or network failed or because the format is not supported.":
+            "Could not load the video. " +
+            "This is most likely either because the event hasn't started yet " +
+            "or because we are still setting up the next talk. " +
+            "If this error doesn't go away, once a talk has started, please get in contact with us."
+    }
+);
 let liveui = !videojs.browser.IS_ANDROID
 const vid = document.getElementById('vid1');
 const player = videojs(vid, {
