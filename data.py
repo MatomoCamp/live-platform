@@ -138,6 +138,8 @@ class Talk:
             return livestream_host + "hls/stream.m3u8", livestream_name
         if self.room == "Livestream Room 2":
             return livestream_host + "hls/stream2.m3u8", livestream_name
+        if self.room == "Livestream Room 3":
+            return livestream_host + "hls/stream3.m3u8", livestream_name
         return "", "No Stream"
 
     @property
