@@ -153,22 +153,31 @@
                         src="{{ livestream_url }}"
                         type="application/x-mpegURL">
             </video-js>
-            <p class="stream-footer">
+            <div class="stream-footer">
+            <div>
                 Stream provided by
                 <a href="https://empreintedigitale.fr/" target="_blank" rel="noopener">
                     <img class="logo" src="/static/empreintedigitale-logo.svg" alt="Empreinte Digitale">
                 </a>
-            </p>
-            <p class="stream-footer">
+            </div>
+            <div>
                 {% if livestream_name != "Main Livestream" %}
                     using {{ livestream_name }}
+                    {% if livestream_name=="Alternative Stream 2" %}
+                        <br>
+                        Some people are experiencing network issues to this streaming server.
+                        If the stream is loading slowly for you, you might want to try the
+                        <a href="?alternative_stream=0">main server</a>
+                        or <a href="?alternative_stream=1">Alternative Stream 1</a>.
+                    {% endif %}
                 {% else %}
                     <a class="btn btn-sm btn-primary"
                        href="?alternative_stream={{ talk.random_alternative_stream_id }}">
                         use alternative Stream
                     </a>
                 {% endif %}
-            </p>
+            </div>
+            </div>
         {% endif %}
     </div>
 {% endif %}

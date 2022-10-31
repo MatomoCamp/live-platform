@@ -64,12 +64,24 @@
 }
 
 .stream-footer {
-  margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
+  div {
+    margin: 1rem;
+    text-align: center;
+  }
+
 
   img {
     display: inline-block;
     width: 150px;
     height: auto;
+    margin-left: 5px;
   }
 }
 

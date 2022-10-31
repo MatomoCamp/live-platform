@@ -11,10 +11,10 @@ from urls import chat_rooms, workshop_urls, recording_ids, archive_names
 from utils import translated_dict_to_string, time_plusminus15min
 
 STREAM_FALLBACKS = False
-
+primary_stream_host = "https://stream-mtmc.cloud-ed.fr/"
 alternative_stream_hosts = {
     "Alternative Stream 1": "https://livestream-mirror1.matomocamp.org/",
-    "Alternative Stream 2": "https://stream-mtmc.cloud-ed.fr/",
+    "Alternative Stream 2": "https://stream-mtmc-2021.cloud-ed.fr/",
 }
 alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
 alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
@@ -116,7 +116,7 @@ class Talk:
         return randint(1, len(alternative_stream_hosts))
 
     def livestream_host(self, alternative_stream_id=None) -> Tuple[str, str]:
-        livestream_host = "https://stream-mtmc-2021.cloud-ed.fr/"
+        livestream_host = primary_stream_host
         livestream_name = "Main Livestream"
         if alternative_stream_id is not None:
             if alternative_stream_id == 0:
