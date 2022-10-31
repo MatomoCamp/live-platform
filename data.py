@@ -135,7 +135,7 @@ class Talk:
     def livestream_url(self, alternative_stream_id=None) -> Tuple[str, str]:
         livestream_host, livestream_name = self.livestream_host(alternative_stream_id)
         if self.room == "Livestream Room 1":
-            return livestream_host + "hls/stream.m3u8", livestream_name
+            return livestream_host + "hls/stream1.m3u8", livestream_name
         if self.room == "Livestream Room 2":
             return livestream_host + "hls/stream2.m3u8", livestream_name
         if self.room == "Livestream Room 3":
