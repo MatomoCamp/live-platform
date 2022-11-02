@@ -35,7 +35,7 @@ chat_rooms = {
     # 2022
 
     "H7YHTG": "event-introduction-2022",  # Event introduction by the MatomoCamp organizers
-    # "JSPF8U": "",  # Yet to be named support talk
+    "JSPF8U": "multi-server-and-docker",  # Yet to be named support talk
     "PYQY3A": "monter-une-infrastructure-matomo",  # Monter une infrastructure Matomo qui gère des millions de hits par mois n’est pas si simple
     "3DBQCM": "developing-a-plugin",
     # How to create your own Matomo plugin? A technical introduction to developing for Matomo.
@@ -44,7 +44,7 @@ chat_rooms = {
     "MWQUT7": "future-of-matomo",  # An Inside Look at the Future of Matomo: User Experience + User Connection
     "S37GBU": "gestion-de-projet-web-analytics",  # Gestion de projet Web Analytics avec Matomo
     "PU7SJR": "contributing-back",  # Contribute back
-    # "33QBWR": "",  # Is Matomo only for European companies and authorities?
+    "33QBWR": "importance-of-privacy",  # Is Matomo only for European companies and authorities?
     "AXGTWL": "analysez-vos-performances",  # Analysez vos performances digitales avec Matomo
     "SXLAJL": "matomo-in-a-data-stack",  # Integrating Matomo in a data stack
     "R393MD": "external-dashboards-data-visualization",  # Matomo: External Dashboards & Data Visualization
@@ -68,7 +68,7 @@ chat_rooms = {
     "7YDHL7": "tracking-spas",  # Tracking SPA applications with Matomo
     "97RZGZ": "standortermittlung",  # Standortermittlung mit Matomo
     "FXLH93": "snowplow",  # Data Creation and Snowplow Open Source
-    # "FUD7JR": "",  # How to use Matomo Log Analysis to retrieve audience data
+    "FUD7JR": "log-analytics",  # How to use Matomo Log Analysis to retrieve audience data
     "BRH8SH": "datenschutzkonformes-performance-marketing",  # Datenschutzkonformes Performance Marketing mit Matomo
     "N3WJCA": "creating-plugins-as-non-developers",  # How to create a plugin for Matomo when you are not a developer?
     "YE9MYB": "plausible-analytics",
