@@ -1,5 +1,7 @@
+import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 from typing import Dict, Set
 
 import sass
@@ -48,6 +50,14 @@ def time_plusminus15min(time: datetime) -> Set[datetime]:
     times.add(time - min15)
     return times
 
+def print_diff_call(str1: str, str2: str, title: str) -> None:
+    with NamedTemporaryFile(delete=True, mode="w", suffix=title) as tmp1:
+        with NamedTemporaryFile(delete=True, mode="w", suffix=title) as tmp2:
+            tmp1.write(str1)
+            tmp1.flush()
+            tmp2.write(str2)
+            tmp2.flush()
+            subprocess.run(["git", "--no-pager", "diff", "--color-words=.", tmp1.name, tmp2.name])
 
 if __name__ == '__main__':
     save_css()

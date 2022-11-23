@@ -3,11 +3,12 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from random import randint, random
 from typing import List, Dict, Tuple, Optional
+from urllib.parse import quote_plus
 
 import pytz
 from dateutil.parser import parse
 
-from urls import chat_rooms, workshop_urls, recording_ids, archive_names
+from urls import chat_rooms, workshop_urls, recording_ids, archive_names, recording_ids_drafts
 from utils import translated_dict_to_string, time_plusminus15min
 
 STREAM_FALLBACKS = False
@@ -98,16 +99,37 @@ class Talk:
         return f"#{self.chat_room}:matomocamp.org"
 
     @property
+    def archive_name(self) -> Optional[str]:
+        try:
+            return archive_names[self.id]
+        except KeyError:
+            return None
+
+    @property
+    def archive_name_encoded(self) -> Optional[str]:
+        try:
+            return quote_plus(archive_names[self.id]).replace("+", "%20")
+        except KeyError:
+            return None
+
+    @property
     def chat_room_url(self) -> str:
         try:
-            return f"https://archive.matomocamp.org/{self.year}/{archive_names[self.id]}/chat/"
+            return f"https://archive.matomocamp.org/{self.year}/{self.archive_name_encoded}/chat/"
         except KeyError:
             return "https://chat.matomocamp.org/#/room/" + self.chat_room_id
 
     @property
     def archive_url(self) -> Optional[str]:
         try:
-            return f"https://archive.matomocamp.org/{self.year}/{archive_names[self.id]}/"
+            return f"https://archive.matomocamp.org/{self.year}/{self.archive_name_encoded}/"
+        except KeyError:
+            return None
+
+    @property
+    def subtitle_edit_url(self) -> Optional[str]:
+        try:
+            return f"https://github.com/MatomoCamp/recording-subtitles/tree/main/{self.year}/{self.archive_name_encoded}/"
         except KeyError:
             return None
 
@@ -150,6 +172,12 @@ class Talk:
     def recording_id(self) -> Optional[str]:
         if self.id in recording_ids:
             return recording_ids[self.id]
+        return None
+
+    @property
+    def recording_id_drafts(self) -> Optional[str]:
+        if self.id in recording_ids_drafts:
+            return recording_ids_drafts[self.id]
         return None
 
     @property
@@ -273,3 +301,14 @@ if __name__ == '__main__':
     for talk in talks:
         if talk.id not in chat_rooms:
             print(f"missing chatroom: {talk.id} ({talk.title})")
+
+    with open("/home/lukas/tmp/stats.json") as f:
+        data = json.load(f)
+    data_dict = {}
+    for e in data:
+        data_dict[e["label"].lstrip("/")] = e
+    for talk in talks:
+        if talk.year != 2022 or talk.id == "389UYH":
+            continue
+        num_pageviews = data_dict[talk.id]["nb_visits"]
+        print(f"{talk.title};{', '.join(talk.speaker_names)};{num_pageviews}")

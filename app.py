@@ -9,7 +9,7 @@ from utils import get_css
 
 app = Flask(__name__)
 
-not_yet_published_message = "The recording for this talk has not yet been published." \
+not_yet_published_message = "The recording for this talk has not yet been published. " \
                             "Please come back later or follow us on social media to be notified."
 
 

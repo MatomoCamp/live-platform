@@ -34,48 +34,46 @@ chat_rooms = {
 
     # 2022
 
-    "H7YHTG": "event-introduction-2022",  # Event introduction by the MatomoCamp organizers
-    "JSPF8U": "multi-server-and-docker",  # Yet to be named support talk
-    "PYQY3A": "monter-une-infrastructure-matomo",  # Monter une infrastructure Matomo qui gère des millions de hits par mois n’est pas si simple
+    "H7YHTG": "event-introduction-2022",
+    "JSPF8U": "multi-server-and-docker",
+    "PYQY3A": "monter-une-infrastructure-matomo",
     "3DBQCM": "developing-a-plugin",
-    # How to create your own Matomo plugin? A technical introduction to developing for Matomo.
-    "3LRN3P": "ideal-matomo",  # Imagine Ideal Matomo !
-    "EMG79M": "reussir-limplementation-de-matomo",  # Réussir l'implémentationde Matomo - SOS Villages d'enfants x Elevate
-    "MWQUT7": "future-of-matomo",  # An Inside Look at the Future of Matomo: User Experience + User Connection
-    "S37GBU": "gestion-de-projet-web-analytics",  # Gestion de projet Web Analytics avec Matomo
-    "PU7SJR": "contributing-back",  # Contribute back
-    "33QBWR": "importance-of-privacy",  # Is Matomo only for European companies and authorities?
-    "AXGTWL": "analysez-vos-performances",  # Analysez vos performances digitales avec Matomo
-    "SXLAJL": "matomo-in-a-data-stack",  # Integrating Matomo in a data stack
-    "R393MD": "external-dashboards-data-visualization",  # Matomo: External Dashboards & Data Visualization
-    "SNEUXP": "migration-de-vos-datas-ga-vers-matomo",  # Migration de vos datas Google Analytics UA vers Matomo
-    "QCGUJB": "security-hardening",  # Linux security hardening on a Matomo installation
-    "ADJLAW": "dashboards-with-apache-superset",  # Open source dashboards ontop of Matomo with Apache Superset
-    "PYT37H": "matomo-et-wordpress",  # Matomo et WordPress comment les connecter ?
+    "3LRN3P": "ideal-matomo",
+    "EMG79M": "reussir-limplementation-de-matomo",
+    "MWQUT7": "future-of-matomo",
+    "S37GBU": "gestion-de-projet-web-analytics",
+    "PU7SJR": "contributing-back",
+    "33QBWR": "importance-of-privacy",
+    "AXGTWL": "analysez-vos-performances",
+    "SXLAJL": "matomo-in-a-data-stack",
+    "R393MD": "external-dashboards-data-visualization",
+    "SNEUXP": "migration-de-vos-datas-ga-vers-matomo",
+    "QCGUJB": "security-hardening",
+    "ADJLAW": "dashboards-with-apache-superset",
+    "PYT37H": "matomo-et-wordpress",
     "QB8VY8": "using-kubernetes-and-docker",
-    # Running Matomo with open source technologies such as Kubernetes and docker
-    "XGPBTU": "matomo-and-us-distributors",  # Why Wholesale Distributors in the US should be using Matomo
-    "XMGR83": "les-traductions-dans-matomo",  # Les traductions dans Matomo, comment ça marche?
+    "XGPBTU": "matomo-and-us-distributors",
+    "XMGR83": "les-traductions-dans-matomo",
     "UKTQD8": "matomo-su-kubernetes",
-    "EDHADW": "tag-manager-and-consent-solutions",  # Tag Manager/Consent solutions
-    "CQ3TRP": "vanilla-analytics",  # Matomo & Vanilla Analytics
-    "U9GDMC": "vuejs-in-plugins",  # Building Matomo plugins with VueJS.
-    "TPFDWN": "dashboard",  # Get a kick ass dashboard in Matomo
-    "SRDLAJ": "das-problem-zu-viel",  # Das Problem "zu viel" - Mehr Insights in Matomo
-    "KDWXFH": "intranet-analytics",  # Get started with intranet analytics in Matomo
-    "XRVPDS": "das-problem-zu-wenig",  # Das Problem "zu wenig" - Mehr Insights in Matomo
-    "ZXGJYA": "improve-seo",  # Improve your SEO with Matomo
-    "7YDHL7": "tracking-spas",  # Tracking SPA applications with Matomo
-    "97RZGZ": "standortermittlung",  # Standortermittlung mit Matomo
-    "FXLH93": "snowplow",  # Data Creation and Snowplow Open Source
-    "FUD7JR": "log-analytics",  # How to use Matomo Log Analysis to retrieve audience data
-    "BRH8SH": "datenschutzkonformes-performance-marketing",  # Datenschutzkonformes Performance Marketing mit Matomo
-    "N3WJCA": "creating-plugins-as-non-developers",  # How to create a plugin for Matomo when you are not a developer?
+    "EDHADW": "tag-manager-and-consent-solutions",
+    "CQ3TRP": "vanilla-analytics",
+    "U9GDMC": "vuejs-in-plugins",
+    "TPFDWN": "dashboard",
+    "SRDLAJ": "das-problem-zu-viel",
+    "KDWXFH": "intranet-analytics",
+    "XRVPDS": "das-problem-zu-wenig",
+    "ZXGJYA": "improve-seo",
+    "7YDHL7": "tracking-spas",
+    "97RZGZ": "standortermittlung",
+    "FXLH93": "snowplow",
+    "FUD7JR": "log-analytics",
+    "BRH8SH": "datenschutzkonformes-performance-marketing",
+    "N3WJCA": "creating-plugins-as-non-developers",
     "YE9MYB": "plausible-analytics",
-    "389UYH": "joomla",  # Utilisez Matomo avec Joomla
-    "E893JM": "web-analytics-book",  # The big book about web analytics
-    "WXXXXE": "migrating-matomo",  # The ultimate guide to migrate to Matomo: 7 best practices
-    "ST38HK": "closing-event-2022",  # MatomoCamp closing
+    "389UYH": "joomla",
+    "E893JM": "web-analytics-book",
+    "WXXXXE": "migrating-matomo",
+    "ST38HK": "closing-event-2022",
 }
 
 archive_names = {
@@ -108,7 +106,49 @@ archive_names = {
     "XTF7GX": "Tips and Tricks",
     "Y9AAMG": "Host your own Instance",
     # "ZBWZHJ": "cleaninsights-workshop",
-    "QQJ3ZS": "PII"
+    "QQJ3ZS": "PII",
+
+    "UKTQD8": "Matomo su Kubernetes",
+    "H7YHTG": "Opening",
+                            "JSPF8U": "Multi-Server and Docker",
+    # "PYQY3A": "monter-une-infrastructure-matomo",
+    "3DBQCM": "Your own plugin",
+    "3LRN3P": "Ideal Matomo",
+    "EMG79M": "Réussir l'implémentation de Matomo",
+    "MWQUT7": "Future of Matomo",
+    # "S37GBU": "gestion-de-projet-web-analytics",
+    # "PU7SJR": "contributing-back",
+    "33QBWR": "Importance of Privacy",
+    # "AXGTWL": "analysez-vos-performances",
+    # "SXLAJL": "matomo-in-a-data-stack",
+    "R393MD": "External Dashboards & Data Visualization",
+    # "SNEUXP": "migration-de-vos-datas-ga-vers-matomo",
+    "QCGUJB": "Security Hardening",
+    # "ADJLAW": "dashboards-with-apache-superset",
+    # "PYT37H": "matomo-et-wordpress",
+    # "QB8VY8": "using-kubernetes-and-docker",
+    # "XGPBTU": "matomo-and-us-distributors",
+    # "XMGR83": "les-traductions-dans-matomo",
+    # "UKTQD8": "matomo-su-kubernetes",
+    "EDHADW": "Tag Manager and Consent solutions",
+    # "CQ3TRP": "vanilla-analytics",
+    "U9GDMC": "VueJS in plugins",
+    "TPFDWN": "Kick-ass dashboard",
+    "SRDLAJ": "Das Problem \"zu viel\"",
+    "KDWXFH": "Intranet Analytics",
+    # "XRVPDS": "das-problem-zu-wenig",
+    "ZXGJYA": "Improve your SEO",
+    # "7YDHL7": "tracking-spas",
+    "97RZGZ": "Standortermittlung",
+    "FXLH93": "Snowplow",
+    "FUD7JR": "Log Analytics",
+    "BRH8SH": "Performance Marketing",
+    "N3WJCA": "Creating plugins as non-developers",
+    "YE9MYB": "Plausible Analytics",
+    # "389UYH": "joomla",
+    "E893JM": "Web Analytics Book",
+    "WXXXXE": "Migrating Matomo",
+    "ST38HK": "Closing",
 
 }
 
@@ -146,8 +186,57 @@ recording_ids = {
     "URWXGR": "9cExMatGbi3xH4hjJgndvt",
     "ENHZCR": "dEYt3WxM5V4jBk6BhT5oab",
     "GMUXZZ": "7N9bhdSHYq6zvfrt5E8mwN",
-    "8HSWJD": "cBxLoU5N9g23C7QbBFsAf6"
+    "8HSWJD": "cBxLoU5N9g23C7QbBFsAf6",
 
+    "ZXGJYA": "pJ1C6vLGhcJSfw5ZHvc6YA",
+    "YE9MYB": "s8kxkasrJr38x4CiZcfSu6",
+    "R393MD": "a4QnuwVmcDrEnjghxHspYt",
+    "EDHADW": "55yLTdxSPh4ntJZRr5Gf1Q",
+
+}
+recording_ids_drafts = {
+    "H7YHTG": "uo31Qr3gSdd4zFh2knTpr5",
+    "JSPF8U": "gbUPYbQSEmpFTn3hgYfuMN",
+    # "PYQY3A": "monter-une-infrastructure-matomo",
+    "3DBQCM": "nK3Hyq8hG1MtQ7zFdSQVpD",
+    "3LRN3P": "pj39SJYfUX9ZVXB6KHoGo7",
+    "EMG79M": "dQsWaFHLCAqnDhMyW34jDW",
+    "MWQUT7": "qVqqbK6ezsJnZcbLg2HzPp",
+    # "S37GBU": "gestion-de-projet-web-analytics",
+    # "PU7SJR": "contributing-back",
+    "33QBWR": "mR4XH2d6pJc1PUSokvgGBp",
+    # "AXGTWL": "analysez-vos-performances",
+    # "SXLAJL": "matomo-in-a-data-stack",
+    # "SNEUXP": "migration-de-vos-datas-ga-vers-matomo",
+    "QCGUJB": "bqUDz21DEBfNB674Hekeu2",
+    # "ADJLAW": "dashboards-with-apache-superset",
+    # "PYT37H": "matomo-et-wordpress",
+    # "QB8VY8": "using-kubernetes-and-docker",
+    # "XGPBTU": "matomo-and-us-distributors",
+    # "XMGR83": "les-traductions-dans-matomo",
+    "UKTQD8": "mmKVHh4uP9dvXCuUX7sKmo",
+    # "CQ3TRP": "vanilla-analytics",
+    "U9GDMC": "kazVeZ6x7Tv13CZuJDQwa1",
+    "TPFDWN": "faxC1Tc6ukrDD7yZUZXaPw",
+    "SRDLAJ": "dFUE4UsdsAxmCtWLsMVdfS",
+    "KDWXFH": "1Xed35oAQsDbPafBosMK1W",
+    # "XRVPDS": "das-problem-zu-wenig",
+    # "7YDHL7": "tracking-spas",
+    "97RZGZ": "tFZqwSVPX6nqeXvJedgzsG",
+    "FXLH93": "jjuoDmucxfLWTtzyfsn21a",
+    "FUD7JR": "cyVg7Z1RJoDJdEJ5o81k65",
+    "BRH8SH": "jbQpLLk2q7MEXqAggbinLA",
+    "N3WJCA": "q2ij3WGyehmkpxxjSqguy1",
+    # "389UYH": "joomla",
+    "E893JM": "5opi9rRkxYLv9Fz2VWUAgA",
+    "WXXXXE": "iWBWDy8DeF3RBSbVZkEnYs",
+    "ST38HK": "jjzQEvcuw5fgsqmjD4d94J",
+
+}
+recording_ids_drafts = {**recording_ids_drafts, **recording_ids}
+
+slides = {
+    "GDGZXF": "https://schedule.matomocamp.org/media/matomocamp-2021/submissions/GDGZXF/resources/MatomoCamp_opening_ceremony_v2_ln8dBhV.pdf"
 }
 
 for name in chat_rooms.values():
