@@ -193,14 +193,15 @@ recording_ids = {
     "R393MD": "a4QnuwVmcDrEnjghxHspYt",
     "EDHADW": "55yLTdxSPh4ntJZRr5Gf1Q",
     "TPFDWN": "faxC1Tc6ukrDD7yZUZXaPw",
+    "3LRN3P": "pj39SJYfUX9ZVXB6KHoGo7",
+    "JSPF8U": "gbUPYbQSEmpFTn3hgYfuMN",
+    "UKTQD8": "mmKVHh4uP9dvXCuUX7sKmo",
 
 }
 recording_ids_drafts = {
     "H7YHTG": "uo31Qr3gSdd4zFh2knTpr5",
-    "JSPF8U": "gbUPYbQSEmpFTn3hgYfuMN",
     # "PYQY3A": "monter-une-infrastructure-matomo",
     "3DBQCM": "nK3Hyq8hG1MtQ7zFdSQVpD",
-    "3LRN3P": "pj39SJYfUX9ZVXB6KHoGo7",
     "EMG79M": "dQsWaFHLCAqnDhMyW34jDW",
     "MWQUT7": "qVqqbK6ezsJnZcbLg2HzPp",
     # "S37GBU": "gestion-de-projet-web-analytics",
@@ -215,7 +216,6 @@ recording_ids_drafts = {
     # "QB8VY8": "using-kubernetes-and-docker",
     # "XGPBTU": "matomo-and-us-distributors",
     # "XMGR83": "les-traductions-dans-matomo",
-    "UKTQD8": "mmKVHh4uP9dvXCuUX7sKmo",
     # "CQ3TRP": "vanilla-analytics",
     "U9GDMC": "kazVeZ6x7Tv13CZuJDQwa1",
     "SRDLAJ": "dFUE4UsdsAxmCtWLsMVdfS",
