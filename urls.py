@@ -196,6 +196,8 @@ recording_ids = {
     "3LRN3P": "pj39SJYfUX9ZVXB6KHoGo7",
     "JSPF8U": "gbUPYbQSEmpFTn3hgYfuMN",
     "UKTQD8": "mmKVHh4uP9dvXCuUX7sKmo",
+    "QCGUJB": "8EXSSxhAwwCyRtRGardF1e",
+    "KDWXFH": "1Xed35oAQsDbPafBosMK1W",
 
 }
 recording_ids_drafts = {
@@ -210,7 +212,6 @@ recording_ids_drafts = {
     # "AXGTWL": "analysez-vos-performances",
     # "SXLAJL": "matomo-in-a-data-stack",
     # "SNEUXP": "migration-de-vos-datas-ga-vers-matomo",
-    "QCGUJB": "bqUDz21DEBfNB674Hekeu2",
     # "ADJLAW": "dashboards-with-apache-superset",
     # "PYT37H": "matomo-et-wordpress",
     # "QB8VY8": "using-kubernetes-and-docker",
@@ -219,7 +220,6 @@ recording_ids_drafts = {
     # "CQ3TRP": "vanilla-analytics",
     "U9GDMC": "kazVeZ6x7Tv13CZuJDQwa1",
     "SRDLAJ": "dFUE4UsdsAxmCtWLsMVdfS",
-    "KDWXFH": "1Xed35oAQsDbPafBosMK1W",
     # "XRVPDS": "das-problem-zu-wenig",
     # "7YDHL7": "tracking-spas",
     "97RZGZ": "tFZqwSVPX6nqeXvJedgzsG",
