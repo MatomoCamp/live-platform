@@ -200,6 +200,7 @@ recording_ids = {
     "KDWXFH": "1Xed35oAQsDbPafBosMK1W",
     "3DBQCM": "nK3Hyq8hG1MtQ7zFdSQVpD",
     "97RZGZ": "tFZqwSVPX6nqeXvJedgzsG",
+    "XGPBTU": "bRyRoC82NLkVtoiC58oj17",
 }
 recording_ids_drafts = {
     "H7YHTG": "uo31Qr3gSdd4zFh2knTpr5",
@@ -215,7 +216,6 @@ recording_ids_drafts = {
     # "ADJLAW": "dashboards-with-apache-superset",
     # "PYT37H": "matomo-et-wordpress",
     # "QB8VY8": "using-kubernetes-and-docker",
-    "XGPBTU": "bRyRoC82NLkVtoiC58oj17",
     # "XMGR83": "les-traductions-dans-matomo",
     # "CQ3TRP": "vanilla-analytics",
     "U9GDMC": "kazVeZ6x7Tv13CZuJDQwa1",
