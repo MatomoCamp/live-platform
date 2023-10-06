@@ -31,6 +31,7 @@ if not a.access_token:
     password = getpass()
 
     a.login(username, password)
+    exit()
 
 for talk in talks:
     if not talk.recording_id_drafts:
@@ -40,12 +41,12 @@ for talk in talks:
         continue
         time.sleep(1)
 
-    if sys.argv[1] and talk.id!=sys.argv[1]:
+    if len(sys.argv) > 1 and talk.id != sys.argv[1]:
         continue
-    print(talk)
+    # print(talk)
 
     video = a.get_video(talk.recording_id_drafts)
-
+    print(talk.archive_name)
     project_dir = projects_dir / str(talk.year) / talk.archive_name
     print(project_dir)
     assert project_dir.exists()
@@ -61,7 +62,7 @@ for talk in talks:
     remote_captions = a.get_captions(talk.recording_id_drafts)
     for lang, subtitle in subtitles.items():
         if lang not in remote_captions or subtitle.stat().st_mtime > remote_captions[lang]["timestamp"]:
-            print("upload")
+            print(f"upload {subtitle}")
             a.upload_caption(talk.recording_id_drafts, lang, subtitle)
 
     if talk.year != 2022:

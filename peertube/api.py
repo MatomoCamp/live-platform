@@ -56,17 +56,17 @@ class PeertubeAPI:
         }
 
     def get_video(self, id: str) -> "Video":
-        r = self.s.get(self.api_url + f"/videos/{id}")
+        r = self.s.get(self.api_url + f"/videos/{id}",headers=self.headers)
         r.raise_for_status()
         data = r.json()
-        r2 = self.s.get(self.api_url + f"/videos/{id}/description")
+        r2 = self.s.get(self.api_url + f"/videos/{id}/description",headers=self.headers)
         r2.raise_for_status()
         data["description"] = r2.json()["description"]
 
         return Video.from_dict(data, self)
 
     def get_captions(self, id: str) -> Dict[str, Dict[str, Union[str, int]]]:
-        r = self.s.get(self.api_url + f"/videos/{id}/captions")
+        r = self.s.get(self.api_url + f"/videos/{id}/captions",headers=self.headers)
         r.raise_for_status()
         subtitles = {}
         for entry in r.json()["data"]:
