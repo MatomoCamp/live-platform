@@ -48,8 +48,10 @@ track_colors = {
     },
 }
 
-current_year = 2022
-past_years = [2021]
+track_colors[2023] = track_colors[2022]
+
+current_year = 2023
+past_years = [2021, 2022]
 
 
 @dataclass
@@ -115,6 +117,8 @@ class Talk:
     @property
     def chat_room_url(self) -> str:
         try:
+            if self.archive_name_encoded is None:  # quick ugly workaround
+                raise KeyError()
             return f"https://archive.matomocamp.org/{self.year}/{self.archive_name_encoded}/chat/"
         except KeyError:
             return "https://chat.matomocamp.org/#/room/" + self.chat_room_id
@@ -144,7 +148,7 @@ class Talk:
             if alternative_stream_id == 0:
                 return livestream_host, livestream_name
             return alternative_stream_hosts_urls[alternative_stream_id - 1], \
-                   alternative_stream_hosts_names[alternative_stream_id - 1]
+                alternative_stream_hosts_names[alternative_stream_id - 1]
 
         if STREAM_FALLBACKS:
             use_original_stream = random() > 0.33
@@ -230,10 +234,10 @@ class Talk:
         start_in_right_timezone = self.start.astimezone(conference_timezone)
         weekday = weekday_data[self.start.isoweekday()][self.language]
         return weekday \
-               + " " \
-               + start_in_right_timezone.strftime("%H:%M") \
-               + "–" \
-               + self.end.strftime("%H:%M")
+            + " " \
+            + start_in_right_timezone.strftime("%H:%M") \
+            + "–" \
+            + self.end.strftime("%H:%M")
 
     @property
     def topic(self):
@@ -241,7 +245,7 @@ class Talk:
 
 
 talks = []
-for year in [2021, 2022]:
+for year in [2021, 2022, 2023]:
     with open(f"matomocamp-{year}_sessions.json") as f:
         data: List[Dict] = json.load(f)
     for t in data:
@@ -250,7 +254,7 @@ for year in [2021, 2022]:
         talk = Talk(
             id=t["ID"],
             year=year,
-            title=t["Title"],
+            title=t["Title"] if "Title" in t else t["Proposal title"],
             session_type=translated_dict_to_string(t["Session type"]),
             track=t["Track"]["en"],
             abstract=t["Abstract"],
