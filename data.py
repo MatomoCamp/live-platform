@@ -14,8 +14,8 @@ from utils import translated_dict_to_string, time_plusminus15min
 STREAM_FALLBACKS = False
 primary_stream_host = "https://stream-mtmc.cloud-ed.fr/"
 alternative_stream_hosts = {
-    "Alternative Stream 1": "https://livestream-mirror1.matomocamp.org/",
-    "Alternative Stream 2": "https://stream-mtmc-2021.cloud-ed.fr/",
+    # "Alternative Stream 1": "https://livestream-mirror1.matomocamp.org/",
+    # "Alternative Stream 2": "https://stream-mtmc-2021.cloud-ed.fr/",
 }
 alternative_stream_hosts_names = list(alternative_stream_hosts.keys())
 alternative_stream_hosts_urls = list(alternative_stream_hosts.values())
@@ -78,6 +78,8 @@ class Talk:
             return "French"
         elif self.language == "it":
             return "Italian"
+        elif self.language == "fi":
+            return "Finnish"
         else:
             return "English"
 
@@ -222,12 +224,14 @@ class Talk:
                 "de": "Do",
                 "fr": "Jeu",
                 "it": "Gio",
+                "fi": "To"
             },
             5: {
                 "en": "Fri",
                 "de": "Fr",
                 "fr": "Ven",
                 "it": "Ven",
+                "fi": "Pe"
             }
         }
         print(self.start, self.end)
