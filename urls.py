@@ -75,7 +75,7 @@ chat_rooms = {
     "WXXXXE": "migrating-matomo",
     "ST38HK": "closing-event-2022",
 
-    #2023
+    # 2023
 
     "NQLKF8": "event-introduction-2023",
     "38BMH9": "data-privacy-framework",
@@ -115,7 +115,8 @@ chat_rooms = {
     "G8NL87": "kampagnen-tracking",
     "9F9DFT": "optimizing-intranet-success",
     "RJSXCB": "closing-event-2023",
-
+    "H798FV": "wordpress-cms",
+    "UDCVNQ": "scopri-le-aziende-che-visitano-il-tuo-sito"
 
 }
 
@@ -153,7 +154,7 @@ archive_names = {
 
     "UKTQD8": "Matomo su Kubernetes",
     "H7YHTG": "Opening",
-                            "JSPF8U": "Multi-Server and Docker",
+    "JSPF8U": "Multi-Server and Docker",
     # "PYQY3A": "monter-une-infrastructure-matomo",
     "3DBQCM": "Your own plugin",
     "3LRN3P": "Ideal Matomo",
